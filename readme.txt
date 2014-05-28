@@ -1,4 +1,4 @@
-=== social share button ===
+=== Social Share Button ===
 Contributors: kentothemes
 Donate link: 
 Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin

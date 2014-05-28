@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: social share button
+Plugin Name: Social Share Button
 Plugin URI: http://kentothemes.com
 Description: Social share buttons display on post or page or custom post.
 Version: 1.0
