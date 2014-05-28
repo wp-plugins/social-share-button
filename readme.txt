@@ -1,7 +1,7 @@
 === social share button ===
 Contributors: kentothemes
 Donate link: 
-Tags: social share buttons
+Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin
 Requires at least: 3.8
 Tested up to: 3.9.1
 Stable tag: 1.0
@@ -16,7 +16,8 @@ Display social share buttons under post or page.
 
 easy to use via admin settings to control different style for social share buttons
 
-
+N.B. Initial version not able to display share count stats.
+we are updating
 
 
 
