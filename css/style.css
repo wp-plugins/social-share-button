@@ -67,6 +67,29 @@
 
 
 
+
+
+.ssb-share.defualt table {
+  border: medium none !important;
+  border-collapse: collapse;
+}
+
+.ssb-share.defualt table tr {
+  border: medium none !important;
+}
+
+.ssb-share.defualt table tr td {
+  border: medium none !important;
+  display: inline-block;
+  float: left;
+  height: 27px;
+  text-align: left;
+  vertical-align: top;
+}
+
+
+
+
 /* ******************************************** */
 
 
