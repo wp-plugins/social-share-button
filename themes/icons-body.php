@@ -2,8 +2,67 @@
 
 function ssb_share_body()
 	{
+		global $post;
 		
 		$ssb_share_content_themes = get_option( 'ssb_share_content_themes' );
+		$ssb_post_sites = get_post_meta( $post->ID, 'ssb_post_sites', true );
+
+		if(empty($ssb_post_sites['fb']))
+			{
+			$ssb_count_fb = "0";
+			}
+		else
+			{
+			$ssb_count_fb = $ssb_post_sites['fb'];
+			}
+		
+		if(empty($ssb_post_sites['gplus']))
+			{
+			$ssb_count_gplus = "0";
+			}
+		else
+			{
+			$ssb_count_gplus = $ssb_post_sites['gplus'];
+			}
+		
+		if(empty($ssb_post_sites['twitter']))
+			{
+			$ssb_count_twitter = "0";
+			}
+		else
+			{
+			$ssb_count_twitter = $ssb_post_sites['twitter'];
+			}
+
+		if(empty($ssb_post_sites['linkedin']))
+			{
+			$ssb_count_linkedin = "0";
+			}
+		else
+			{
+			$ssb_count_linkedin = $ssb_post_sites['linkedin'];
+			}
+
+		if(empty($ssb_post_sites['pineterst']))
+			{
+			$ssb_count_pineterst = "0";
+			}
+		else
+			{
+			$ssb_count_pineterst = $ssb_post_sites['pineterst'];
+			}
+		if(empty($ssb_post_sites['reddit']))
+			{
+			$ssb_count_reddit = "0";
+			}
+		else
+			{
+			$ssb_count_reddit = $ssb_post_sites['reddit'];
+			}
+
+
+
+		
 		$ssb_share_icons = "";
 		if($ssb_share_content_themes=='defualt')
 			{
@@ -92,12 +151,12 @@ function ssb_share_body()
 		else if($ssb_share_content_themes=='hexa')
 			{
 				$ssb_share_icons.="
-					<a class='fb' href='https://www.facebook.com/sharer/sharer.php?u=".ssb_share_get_url()."' ><span class='icon'></span><span class='count'>15</span></a>
-					<a class='gplus' href='https://plus.google.com/share?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>17</span></a>
-					<a class='twitter' href='https://twitter.com/intent/tweet?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>12</span></a>
-					<a class='linkedin' href='https://www.linkedin.com/shareArticle?mini=true&url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>78</span></a>
-					<a class='pineterst' href='https://pinterest.com/pin/create/button/?url=".ssb_share_get_url()."&media=".ssb_share_get_image()."'><span class='icon'></span><span class='count'>99</span></a>
-					<a class='reddit' href='http://www.reddit.com/submit?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>100</span></a>";
+					<a class='fb' href='https://www.facebook.com/sharer/sharer.php?u=".ssb_share_get_url()."' ><span class='icon'></span><span class='count'>".$ssb_count_fb."</span></a>
+					<a class='gplus' href='https://plus.google.com/share?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_gplus."</span></a>
+					<a class='twitter' href='https://twitter.com/intent/tweet?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_twitter."</span></a>
+					<a class='linkedin' href='https://www.linkedin.com/shareArticle?mini=true&url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_linkedin."</span></a>
+					<a class='pineterst' href='https://pinterest.com/pin/create/button/?url=".ssb_share_get_url()."&media=".ssb_share_get_image()."'><span class='icon'></span><span class='count'>".$ssb_count_pineterst."</span></a>
+					<a class='reddit' href='http://www.reddit.com/submit?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_reddit."</span></a>";
 			}	
 			
 			
