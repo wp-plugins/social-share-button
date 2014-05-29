@@ -3,7 +3,7 @@
 Plugin Name: Social Share Button
 Plugin URI: http://kentothemes.com
 Description: Social share buttons display on post or page or custom post.
-Version: 1.0
+Version: 1.1
 Author: kentothemes
 Author URI: http://kentothemes.com
 License: GPLv2 or later
@@ -29,8 +29,49 @@ function ssb_ajax_form()
 	{	
 		$ssb_site = $_POST['ssb_site'];
 		$post_id = $_POST['post_id'];
-		// trace stats
 		
+		$ssb_post_sites = get_post_meta( $post_id, 'ssb_post_sites', true );
+
+	
+$ssb_post_sites['fb'] = $ssb_post_sites['fb'];
+$ssb_post_sites['gplus'] = $ssb_post_sites['gplus'];
+$ssb_post_sites['twitter'] = $ssb_post_sites['twitter'];
+$ssb_post_sites['linkedin'] = $ssb_post_sites['linkedin'];
+$ssb_post_sites['pineterst'] = $ssb_post_sites['pineterst'];
+$ssb_post_sites['reddit'] = $ssb_post_sites['reddit'];
+
+
+		if($ssb_site=="fb")
+			{
+			$ssb_post_sites['fb'] = $ssb_post_sites['fb']+1;
+			}
+		elseif($ssb_site=="gplus")
+			{
+			$ssb_post_sites['gplus'] = $ssb_post_sites['gplus']+1;
+			}
+		elseif($ssb_site=="twitter")
+			{
+			$ssb_post_sites['twitter'] = $ssb_post_sites['twitter']+1;
+			}
+		elseif($ssb_site=="linkedin")
+			{
+			$ssb_post_sites['linkedin'] = $ssb_post_sites['linkedin']+1;
+			}
+		elseif($ssb_site=="pineterst")
+			{
+			$ssb_post_sites['pineterst'] = $ssb_post_sites['pineterst']+1;
+			}
+		elseif($ssb_site=="reddit")
+			{
+			$ssb_post_sites['reddit'] = $ssb_post_sites['reddit']+1;
+			}
+
+
+
+
+		
+		// trace stats
+		update_post_meta( $post_id, 'ssb_post_sites', $ssb_post_sites );
 		die();
 	}
 

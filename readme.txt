@@ -4,7 +4,7 @@ Donate link:
 Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin
 Requires at least: 3.8
 Tested up to: 3.9.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,8 +16,7 @@ Display social share buttons under post or page.
 
 easy to use via admin settings to control different style for social share buttons
 
-N.B. Initial version not able to display share count stats.
-we are updating
+
 
 
 
@@ -43,6 +42,9 @@ if you are first time chage settigns and hit <strong>"Save Changes"</strong>
 
 == Changelog ==
 
+
+= 1.1 =
+* added share count.
 
 = 1.0 =
 * Initial release

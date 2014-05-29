@@ -55,7 +55,7 @@
 }
 
 .ssb-share a span.count {
-  display: none;
+  
 }
 
 
@@ -262,7 +262,7 @@
 
 .ssb-share.wide span.count {
   color: #FFFFFF;
-  /*display: inline-block;*/
+  display: inline-block;
   float: right;
   height: 30px;
   padding-right: 7px;
@@ -318,7 +318,7 @@
   margin-right: 5px;
   padding-left: 5px;
   padding-top: 2px;
-  display:none; /*Temp*/
+
 }
 
 
@@ -415,7 +415,7 @@
   padding-left: 5px;
   padding-top: 2px;
   visibility:hidden;
-  display:none; /*Temp*/
+
 }
 
 
