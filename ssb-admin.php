@@ -61,7 +61,7 @@
     
 
     
-    <div class="setting-descriptions"><p>Welcome to your demo sandbox, feel free to explore and play around the admin. This sandbox was created just for you, so you don't have to worry about breaking anything.</p></div>
+    <div class="setting-descriptions"><p>Control social share button option here, choose different style and themes, display top or bottom of content.</p></div>
 
 
     <div class="option-area">
