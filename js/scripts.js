@@ -5,7 +5,8 @@ jQuery(document).ready(function(jQuery)
 			jQuery(".ssb-share a").click(function(){
 				
 				var ssb_site = jQuery(this).attr('class');
-				var post_id = jQuery(this).parent().attr("post_id");;
+				var post_id = jQuery(this).parent().attr("post_id");
+				
 
 
 				jQuery.ajax(
