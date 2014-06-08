@@ -7,7 +7,7 @@
 			$ssb_share_content_position = get_option( 'ssb_share_content_position' );
 			$ssb_share_content_icon_margin = get_option( 'ssb_share_content_icon_margin' );
 			$ssb_share_filter_posttype = get_option( 'ssb_share_filter_posttype' );			
-			
+			$ssb_share_target_tab = get_option( 'ssb_share_target_tab' );				
 					
 		}
 
@@ -37,7 +37,8 @@
 			$ssb_share_filter_posttype = $_POST['ssb_share_filter_posttype'];
 			update_option('ssb_share_filter_posttype', $ssb_share_filter_posttype);			
 			
-			
+			$ssb_share_target_tab = $_POST['ssb_share_target_tab'];
+			update_option('ssb_share_target_tab', $ssb_share_target_tab);				
 			
 			?>
 			<div class="updated"><p><strong><?php _e('Changes Saved.' ); ?></strong></p>
@@ -118,6 +119,38 @@ foreach ( $post_types as $post_type ) {
     </div>
 
 </div>
+
+
+
+
+
+
+
+<div class="option-area">
+    <div class="option-title"><strong>Open new tab when click share buttons</strong>
+    
+    </div>
+    <div class="option-descriptions">When someone try to click share buttons it will open new tab to sahre link on social media sites.
+    </div>
+    
+    <div class="option-input">
+        <select name="ssb_share_target_tab">
+        	<option value="new" <?php  if($ssb_share_target_tab=='new') echo "selected"; ?>>New</option> 
+        	<option value="same" <?php  if($ssb_share_target_tab=='same') echo "selected"; ?>>Same</option>
+        </select>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 
