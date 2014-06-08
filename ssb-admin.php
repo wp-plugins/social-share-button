@@ -5,7 +5,10 @@
 			$ssb_share_content_display = get_option( 'ssb_share_content_display' );	
 			$ssb_share_content_themes = get_option( 'ssb_share_content_themes' );
 			$ssb_share_content_position = get_option( 'ssb_share_content_position' );
-			$ssb_share_content_icon_margin = get_option( 'ssb_share_content_icon_margin' );			
+			$ssb_share_content_icon_margin = get_option( 'ssb_share_content_icon_margin' );
+			$ssb_share_filter_posttype = get_option( 'ssb_share_filter_posttype' );			
+			
+					
 		}
 
 	else
@@ -28,7 +31,11 @@
 			update_option('ssb_share_content_position', $ssb_share_content_position);
 			
 			$ssb_share_content_icon_margin = $_POST['ssb_share_content_icon_margin'];
-			update_option('ssb_share_content_icon_margin', $ssb_share_content_icon_margin);			
+			update_option('ssb_share_content_icon_margin', $ssb_share_content_icon_margin);
+			
+			
+			$ssb_share_filter_posttype = $_POST['ssb_share_filter_posttype'];
+			update_option('ssb_share_filter_posttype', $ssb_share_filter_posttype);			
 			
 			
 			
@@ -68,7 +75,7 @@
     <div class="option-title"><strong>Display On Content</strong>
     
     </div>
-    <div class="option-descriptions">choose 'yes' to display share buttons on content and choose 'No' to hide share buttons on post.
+    <div class="option-descriptions">Choose 'yes' to display share buttons on content and choose 'No' to hide share buttons on post.
     
     </div>
     
@@ -81,6 +88,43 @@
     </div>
 
 </div>
+
+
+
+
+
+
+
+
+<div class="option-area">
+    <div class="option-title"><strong>Display share button On These Post Type Only</strong>
+    
+    </div>
+    <div class="option-descriptions">By choosing post type you can filter display share button only these post type.
+    </div>
+    
+    <div class="option-input">
+<?php
+
+$post_types = get_post_types( '', 'names' ); 
+
+foreach ( $post_types as $post_type ) {
+
+   echo '<label for="ssb_share_filter_posttype['.$post_type.']"><input type="checkbox" name="ssb_share_filter_posttype['.$post_type.']" id="ssb_share_filter_posttype['.$post_type.']"  value ="1" ' ?> 
+   <?php if ( isset( $ssb_share_filter_posttype[$post_type] ) ) echo "checked"; ?>
+   <?php echo' >'. $post_type.'</label><br />' ;
+}
+?>
+    </div>
+
+</div>
+
+
+
+
+
+
+
 
 
     <div class="option-area">

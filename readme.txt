@@ -51,6 +51,7 @@ and visit your website or single post.
 == Changelog ==
 
 = 1.3 =
+* filter posttype to display share buttons.
 * Fixed admin settings.
 
 = 1.2 =
