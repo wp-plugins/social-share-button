@@ -110,7 +110,7 @@
     <div class="option-title"><strong>Social Share Position</strong>
     
     </div>
-    <div class="option-descriptions">Select different style themes to display different style buttons on post.
+    <div class="option-descriptions">Display share button top or bottom of content.
     </div>
     
     <div class="option-input">

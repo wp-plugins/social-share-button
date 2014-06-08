@@ -3,7 +3,7 @@
 Plugin Name: Social Share Button
 Plugin URI: http://kentothemes.com
 Description: Social share buttons display on post or page or custom post.
-Version: 1.2
+Version: 1.3
 Author: kentothemes
 Author URI: http://kentothemes.com
 License: GPLv2 or later
@@ -21,6 +21,7 @@ function ssb_script()
 		wp_enqueue_script('ssb-js', plugins_url( '/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
 		wp_localize_script( 'ssb-js', 'ssb_ajax', array( 'ssb_ajaxurl' => admin_url( 'admin-ajax.php')));
 	}
+	
 add_action('init', 'ssb_script');
 
 
@@ -66,10 +67,6 @@ $ssb_post_sites['reddit'] = $ssb_post_sites['reddit'];
 			$ssb_post_sites['reddit'] = $ssb_post_sites['reddit']+1;
 			}
 
-
-
-
-		
 		// trace stats
 		update_post_meta( $post_id, 'ssb_post_sites', $ssb_post_sites );
 		die();

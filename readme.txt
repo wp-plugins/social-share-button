@@ -4,7 +4,7 @@ Donate link:
 Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin
 Requires at least: 3.8
 Tested up to: 3.9.1
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,7 +37,7 @@ Live Demo: http://kentothemes.com/demo/social-share-button/
 
 if you are first time chage settigns and hit <strong>"Save Changes"</strong>
 
-
+and visit your website or single post.
 
 == Screenshots ==
 
@@ -50,7 +50,8 @@ if you are first time chage settigns and hit <strong>"Save Changes"</strong>
 
 == Changelog ==
 
-
+= 1.3 =
+* Fixed admin settings.
 
 = 1.2 =
 * Bug Fixed.
