@@ -33,11 +33,25 @@
 			$ssb_share_content_icon_margin = $_POST['ssb_share_content_icon_margin'];
 			update_option('ssb_share_content_icon_margin', $ssb_share_content_icon_margin);
 			
+
+			if(!empty($_POST['ssb_share_filter_posttype']))
+				{
+					$ssb_share_filter_posttype = $_POST['ssb_share_filter_posttype'];
+					
+				}
+			else
+				{
+					$ssb_share_filter_posttype = "";
+				}
+
 			
-			$ssb_share_filter_posttype = $_POST['ssb_share_filter_posttype'];
 			update_option('ssb_share_filter_posttype', $ssb_share_filter_posttype);			
 			
 			$ssb_share_target_tab = $_POST['ssb_share_target_tab'];
+			
+
+			
+			
 			update_option('ssb_share_target_tab', $ssb_share_target_tab);				
 			
 			?>

@@ -53,7 +53,7 @@ and visit your website or single post.
 = 1.3 =
 * filter posttype to display share buttons.
 * Fixed admin settings.
-* click share on new or same tab.
+* Open sare window on new or same tab.
 
 = 1.2 =
 * Bug Fixed.
