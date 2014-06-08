@@ -229,7 +229,72 @@ foreach ( $post_types as $post_type ) {
         <div class="option-title"><strong>Need Help ?</strong>
         
         </div>
-        <div class="option-descriptions">Please report any issue via our support forum <a href="http://kentothemes.com/questions-answers/">kentothemes.com &raquo; Q&A</a> or aks any question if you need.</div>
+        <div class="option-descriptions">Please report any issue via our support forum <a href="http://kentothemes.com/questions-answers/">kentothemes.com &raquo; Q&A</a> or aks any question if you need.
+        
+        
+        
+<?php
+
+
+				$plugin_link = 'http://kentothemes.com/items/social/social-share-button-for-wordpress/';
+				$ssb_share = '';
+				$ssb_share.= '<br /><br /><strong>Help us by sharing with your friends.<strong><br /><table ><tr>
+				<td width="90">
+<iframe src="//www.facebook.com/plugins/like.php?href='.$plugin_link.'&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=743541755673761" scrolling="no" frameborder="0" style="border:none; overflow:hidden;width:100px; height:21px;" allowTransparency="true"></iframe>
+				</td>
+    
+';
+
+				
+				$ssb_share.= '
+					<td width="90" >
+				
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="'.$plugin_link.'">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");</script>
+					</td>';				
+			
+				$ssb_share.= '
+					<td width="70">
+				<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+<div class="g-plusone" data-size="medium" data-href="'.$plugin_link.'"></div>
+					</td>';				
+			
+			
+				$ssb_share.= '
+					<td width="110">
+				<script src="//platform.linkedin.com/in.js" type="text/javascript">
+  lang: en_US
+</script>
+<script type="IN/Share" data-url="'.$plugin_link.'" data-counter="right"></script>
+					
+					</td>';			
+			
+				$ssb_share.= '
+					<td width="100">
+					
+					
+					
+<script type="text/javascript" src="http://www.reddit.com/buttonlite.js?i=1&styled=off&url='.$plugin_link.'&newwindow=1"></script>
+					
+
+
+					</td>';
+	
+					
+				
+				$ssb_share.= '</tr></table>';
+
+				echo $ssb_share;
+
+
+
+?>
+        
+        
+        
+        
+        
+        </div>
         <div class="option-input">
 
         </div>
