@@ -1,10 +1,10 @@
 === Social Share Button ===
 Contributors: kentothemes
 Donate link: 
-Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin
+Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin, social share plugin wordpress, Social Media Plugins, Social Media share
 Requires at least: 3.8
 Tested up to: 3.9.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,13 +19,14 @@ Displaying social share button on your website is most powerful way to boost you
 <strong>Plugin Features</strong>
 
 * 7 Different themes.
+* Display hover style sidebar.
 * default social share buttons.
 * Display top or bellow content.
 * margin for buttons.
 * share count for custom social share.
 
 
-Live Demo: http://kentothemes.com/demo/social-share-button/
+Plugin Details: http://kentothemes.com/items/social/social-share-button-for-wordpress/
 
 
 == Installation ==
@@ -35,7 +36,7 @@ Live Demo: http://kentothemes.com/demo/social-share-button/
 2. Go your Pluings setting via WordPress Dashboard and <strong>activate</strong> it.
 3. After Activate you see Menu on left Sidebar "<strong>SSB Settings</strong>" 
 
-if you are first time chage settigns and hit <strong>"Save Changes"</strong>
+if you are first time change settings and hit <strong>"Save Changes"</strong>
 
 and visit your website or single post.
 
@@ -50,10 +51,15 @@ and visit your website or single post.
 
 == Changelog ==
 
+
+= 1.4 =
+* Update admin settings.
+* Two theme added for social buttons.
+
 = 1.3 =
 * filter posttype to display share buttons.
 * Fixed admin settings.
-* Open sare window on new or same tab.
+* Open share window on new or same tab.
 
 = 1.2 =
 * Bug Fixed.

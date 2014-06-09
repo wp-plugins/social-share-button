@@ -3,7 +3,7 @@
 Plugin Name: Social Share Button
 Plugin URI: http://kentothemes.com
 Description: Social share buttons display on post or page or custom post.
-Version: 1.3
+Version: 1.4
 Author: kentothemes
 Author URI: http://kentothemes.com
 License: GPLv2 or later

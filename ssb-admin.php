@@ -182,14 +182,148 @@ foreach ( $post_types as $post_type ) {
     </div>
     
     <div class="option-input">
-        <select name="ssb_share_content_themes">
-        	<option value="defualt" <?php  if($ssb_share_content_themes=='defualt') echo "selected"; ?>>Defualt</option> 
-        	<option value="flat" <?php  if($ssb_share_content_themes=='flat') echo "selected"; ?>>Flat</option>
-            <option value="round" <?php  if($ssb_share_content_themes=='round') echo "selected"; ?>>Round</option>
-             <option value="wide" <?php  if($ssb_share_content_themes=='wide') echo "selected"; ?>>Wide</option>
-             <option value="bodyname" <?php  if($ssb_share_content_themes=='bodyname') echo "selected"; ?>>Body Name</option>             <option value="packslide" <?php  if($ssb_share_content_themes=='packslide') echo "selected"; ?>>Pack Slide</option>
-             <option value="hexa" <?php  if($ssb_share_content_themes=='hexa') echo "selected"; ?>>Hexa</option> 
-        </select>  
+<style type="text/css">
+
+.ssb_share_content_themes input[type="radio"] {
+  display: none;
+}
+
+.ssb_share_content_themes label {
+  cursor: pointer;
+  display: inline-block;
+}
+.ssb_share_content_themes span.selected {
+  border: 3px solid #FF511C;
+  box-shadow: 0 0 4px -1px #000000;
+}
+
+
+
+span.ssb_share_content_themes_defualt 
+	{
+  background: url("<?php echo ssb_plugin_path; ?>css/admin-defualt.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+	
+	}
+span.ssb_share_content_themes_flat {
+  background: url("<?php echo ssb_plugin_path; ?>css/admin-flat.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+  
+}
+
+
+
+
+
+
+
+
+	
+span.ssb_share_content_themes_round 
+	{
+  background: url("<?php echo ssb_plugin_path; ?>css/admin-round.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+	}
+	
+	
+span.ssb_share_content_themes_wide 
+	{
+  background: url("<?php echo ssb_plugin_path; ?>css/admin-wide.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+	}	
+	
+	
+span.ssb_share_content_themes_bodyname 
+	{
+  background: url("<?php echo ssb_plugin_path; ?>css/admin-bodyname.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+	}
+span.ssb_share_content_themes_packslide 
+	{
+  background: url("<?php echo ssb_plugin_path; ?>css/admin-packslide.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+	}	
+	
+span.ssb_share_content_themes_hexa
+	{
+  background: url("<?php echo ssb_plugin_path; ?>css/admin-hexa.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+	}	
+	
+span.ssb_share_content_themes_hover_left
+	{
+  background: url("<?php echo ssb_plugin_path; ?>css/admin-hover-left.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+	}	
+	
+	
+span.ssb_share_content_themes_hover_right 
+	{
+  background: url("<?php echo ssb_plugin_path; ?>css/admin-hover-right.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+	}	
+	
+</style>
+
+
+<script>
+jQuery(document).ready(function(jQuery)
+	{
+					jQuery(".ssb_share_content_themes span").click(function(){
+						jQuery('.selected').removeClass('selected');
+						jQuery(this).addClass('selected');
+						
+						})
+
+					
+	})
+
+</script>
+
+
+
+
+
+
+
+        <div class="ssb_share_content_themes">
+        	<label ><input type="radio" name="ssb_share_content_themes"  value="defualt" <?php  if($ssb_share_content_themes=='defualt') echo "checked"; ?>/><span title="Defualt" class="ssb_share_content_themes_defualt <?php  if($ssb_share_content_themes=='defualt') echo "selected"; ?>"></span></label>
+            
+        	<label ><input type="radio" name="ssb_share_content_themes"  value="flat" <?php  if($ssb_share_content_themes=='flat') echo "checked"; ?>/><span title="Flat" class="ssb_share_content_themes_flat <?php  if($ssb_share_content_themes=='flat') echo "selected"; ?>"></span></label>
+            
+           <label ><input type="radio" name="ssb_share_content_themes"  value="round" <?php  if($ssb_share_content_themes=='round') echo "checked"; ?>/><span title="Round" class="ssb_share_content_themes_round <?php  if($ssb_share_content_themes=='round') echo "selected"; ?>" ></span></label>
+           
+           <label ><input type="radio" name="ssb_share_content_themes"  value="wide" <?php  if($ssb_share_content_themes=='wide') echo "checked"; ?>/><span title="Wide" class="ssb_share_content_themes_wide <?php  if($ssb_share_content_themes=='wide') echo "selected"; ?>"></span></label>
+            
+           <label > <input type="radio" name="ssb_share_content_themes"  value="bodyname" <?php  if($ssb_share_content_themes=='bodyname') echo "checked"; ?>/><span title="Body Name" class="ssb_share_content_themes_bodyname <?php  if($ssb_share_content_themes=='bodyname') echo "selected"; ?>"></span></label>
+            
+             <label ><input type="radio" name="ssb_share_content_themes"  value="packslide" <?php  if($ssb_share_content_themes=='packslide') echo "checked"; ?>><span title="Pack Slide"  class="ssb_share_content_themes_packslide <?php  if($ssb_share_content_themes=='packslide') echo "selected"; ?>"></span></label>
+             
+            <label ><input type="radio" name="ssb_share_content_themes"  value="hexa" <?php  if($ssb_share_content_themes=='hexa') echo "checked"; ?>/><span title="Hexa" class="ssb_share_content_themes_hexa <?php  if($ssb_share_content_themes=='hexa') echo "selected"; ?>"></span></label>
+            
+            <label > <input type="radio" name="ssb_share_content_themes"  value="hover-left" <?php  if($ssb_share_content_themes=='hover-left') echo "checked"; ?>><span title="Hover Left" class="ssb_share_content_themes_hover_left <?php  if($ssb_share_content_themes=='hover-left') echo "selected"; ?>"></span></label>
+                 
+             <label ><input type="radio" name="ssb_share_content_themes"   value="hover-right" <?php  if($ssb_share_content_themes=='hover-right') echo "checked"; ?>/><span title="Hover Right" class="ssb_share_content_themes_hover_right <?php  if($ssb_share_content_themes=='hover-right') echo "selected"; ?>"></span></label>                   
+            </div>       
+      
     </div>
 
 </div>
@@ -229,7 +363,7 @@ foreach ( $post_types as $post_type ) {
         <div class="option-title"><strong>Need Help ?</strong>
         
         </div>
-        <div class="option-descriptions">Please report any issue via our support forum <a href="http://kentothemes.com/questions-answers/">kentothemes.com &raquo; Q&A</a> or aks any question if you need.
+        <div class="option-descriptions">Please report any issue via our support forum <a href="http://kentothemes.com/questions-answers/">kentothemes.com &raquo; Q&A</a> or ask any question if you need.
         
         
         

@@ -563,3 +563,179 @@
 	visibility:visible;
 	top: -15px;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ******************hover-left************************** */
+
+
+
+
+.ssb-share.hover-left {
+  display: inline-block;
+  left: 0;
+  position: fixed;
+  top: 30%;
+}
+
+.ssb-share.hover-left a {
+  display: inline-block;
+  float: left;
+  height: 30px;
+  position: relative;
+  vertical-align: top;
+  width: 30px;
+}
+
+
+.ssb-share.hover-left a.fb {
+  background: none repeat scroll 0 0 #3A589B;
+}
+
+
+.ssb-share.hover-left a.gplus {
+  background: none repeat scroll 0 0 #DA4735;
+}
+.ssb-share.hover-left a.twitter {
+  background: none repeat scroll 0 0 #33b1cb;
+}
+.ssb-share.hover-left a.linkedin {
+  background: none repeat scroll 0 0 #1183a6;
+}
+.ssb-share.hover-left a.pineterst {
+  background: none repeat scroll 0 0 #CB2028;
+}
+.ssb-share.hover-left a.reddit {
+  background: none repeat scroll 0 0 #7ccbff;
+}
+
+
+.ssb-share.hover-left span.count {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9);
+  color: #FFFFFF;
+  visibility:hidden;
+  font-size: 10px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 13px;
+  transition: all 1s ease 0s;
+  width: 30px;
+}
+
+.ssb-share.hover-left a:hover > span.count{
+	visibility:visible;
+	top: -15px;
+	}
+
+
+
+/* ******************************************** */
+
+
+
+
+
+
+
+
+
+
+
+/* ******************hover-right************************** */
+
+
+
+
+.ssb-share.hover-right {
+  display: inline-block;
+  right: 0;
+  position: fixed;
+  top: 30%;
+}
+
+.ssb-share.hover-right a {
+  display: inline-block;
+  float: left;
+  height: 30px;
+  position: relative;
+  vertical-align: top;
+  width: 30px;
+}
+
+
+.ssb-share.hover-right a.fb {
+  background: none repeat scroll 0 0 #3A589B;
+}
+
+
+.ssb-share.hover-right a.gplus {
+  background: none repeat scroll 0 0 #DA4735;
+}
+.ssb-share.hover-right a.twitter {
+  background: none repeat scroll 0 0 #33b1cb;
+}
+.ssb-share.hover-right a.linkedin {
+  background: none repeat scroll 0 0 #1183a6;
+}
+.ssb-share.hover-right a.pineterst {
+  background: none repeat scroll 0 0 #CB2028;
+}
+.ssb-share.hover-right a.reddit {
+  background: none repeat scroll 0 0 #7ccbff;
+}
+
+
+.ssb-share.hover-right span.count {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9);
+  color: #FFFFFF;
+  visibility:hidden;
+  font-size: 10px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 13px;
+  transition: all 1s ease 0s;
+  width: 30px;
+}
+
+.ssb-share.hover-right a:hover > span.count{
+	visibility:visible;
+	top: -15px;
+	}
+
+
+
+/* ******************************************** */
+
+
+
+
+
+
+
+
+
+
+
+
+

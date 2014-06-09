@@ -169,9 +169,27 @@ function ssb_share_body()
 			}	
 			
 			
+		else if($ssb_share_content_themes=='hover-left')
+			{
+				$ssb_share_icons.="
+					<a ".$ssb_share_target_tab." class='fb' href='https://www.facebook.com/sharer/sharer.php?u=".ssb_share_get_url()."' ><span class='icon'></span><span class='count'>".$ssb_count_fb."</span></a><br />
+					<a ".$ssb_share_target_tab." class='gplus' href='https://plus.google.com/share?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_gplus."</span></a><br />
+					<a ".$ssb_share_target_tab." class='twitter' href='https://twitter.com/intent/tweet?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_twitter."</span></a><br />
+					<a ".$ssb_share_target_tab." class='linkedin' href='https://www.linkedin.com/shareArticle?mini=true&url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_linkedin."</span></a><br />
+					<a ".$ssb_share_target_tab." class='pineterst' href='https://pinterest.com/pin/create/button/?url=".ssb_share_get_url()."&media=".ssb_share_get_image()."'><span class='icon'></span><span class='count'>".$ssb_count_pineterst."</span></a><br />
+					<a ".$ssb_share_target_tab." class='reddit' href='http://www.reddit.com/submit?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_reddit."</span></a><br />";
+			}
 			
-			
-			
+		else if($ssb_share_content_themes=='hover-right')
+			{
+				$ssb_share_icons.="
+					<a ".$ssb_share_target_tab." class='fb' href='https://www.facebook.com/sharer/sharer.php?u=".ssb_share_get_url()."' ><span class='icon'></span><span class='count'>".$ssb_count_fb."</span></a><br />
+					<a ".$ssb_share_target_tab." class='gplus' href='https://plus.google.com/share?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_gplus."</span></a><br />
+					<a ".$ssb_share_target_tab." class='twitter' href='https://twitter.com/intent/tweet?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_twitter."</span></a><br />
+					<a ".$ssb_share_target_tab." class='linkedin' href='https://www.linkedin.com/shareArticle?mini=true&url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_linkedin."</span></a><br />
+					<a ".$ssb_share_target_tab." class='pineterst' href='https://pinterest.com/pin/create/button/?url=".ssb_share_get_url()."&media=".ssb_share_get_image()."'><span class='icon'></span><span class='count'>".$ssb_count_pineterst."</span></a><br />
+					<a ".$ssb_share_target_tab." class='reddit' href='http://www.reddit.com/submit?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_reddit."</span></a><br />";
+			}		
 			
 			
 
