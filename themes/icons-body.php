@@ -100,7 +100,7 @@ function ssb_share_body()
 			
 			
 				$ssb_share_icons.= '
-					<td width="110">
+					<td width="105">
 				<script src="//platform.linkedin.com/in.js" type="text/javascript">
   lang: en_US
 </script>
@@ -108,9 +108,23 @@ function ssb_share_body()
 					
 					</td>';			
 			
+			
+			
+				$ssb_share_icons.= '
+					<td width="80">
+<a href="//www.pinterest.com/pin/create/button/?url='.ssb_share_get_url().'&media='.ssb_share_get_image().'&description='.ssb_share_get_title().'" data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+<!-- Please call pinit.js only once per page -->
+<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+					
+
+					</td>';			
+			
+			
 				$ssb_share_icons.= '
 					<td width="100">
-					<script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script><td>
+					<script type="text/javascript" src="http://www.reddit.com/static/button/button1.js?i=1&styled=off&url='.ssb_share_get_url().'&newwindow=1&reddit_title='.ssb_share_get_title().'"></script>
+					
+
 					</td>';
 	
 					

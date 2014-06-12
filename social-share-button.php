@@ -3,7 +3,7 @@
 Plugin Name: Social Share Button
 Plugin URI: http://kentothemes.com
 Description: Social share buttons display on post or page or custom post.
-Version: 1.4
+Version: 1.5
 Author: kentothemes
 Author URI: http://kentothemes.com
 License: GPLv2 or later
@@ -23,6 +23,54 @@ function ssb_script()
 	}
 	
 add_action('init', 'ssb_script');
+
+
+
+
+
+
+register_activation_hook(__FILE__, 'ssb_share_activation');
+register_uninstall_hook(__FILE__, 'ssb_share_uninstall');
+
+
+function ssb_share_activation()
+	{
+		
+		$ssb_share_version = "1.5";
+		update_option('ssb_share_version', $ssb_share_version); //update plugin version.
+		
+	}
+
+
+
+function ssb_share_uninstall()
+	{
+		
+		delete_post_meta_by_key( 'ssb_post_sites' ); //delete post meta from post
+		
+		delete_option( 'ssb_share_version' ); //delete option from database.
+		delete_option( 'ssb_share_filter_posttype' ); //delete option from database.
+		delete_option( 'ssb_share_content_display' ); //delete option from database.	
+		delete_option( 'ssb_share_target_tab' ); //delete option from database.			
+		delete_option( 'ssb_share_content_themes' ); //delete option from database.	
+		delete_option( 'ssb_share_content_position' ); //delete option from database.			
+		delete_option( 'ssb_share_content_icon_margin' ); //delete option from database.			
+	
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -159,6 +207,15 @@ function ssb_share_icons()
 
 
 
+function ssb_share_get_title()
+	{
+		global $post;
+		$title = get_the_title( $post->ID );
+		
+		return $title;	
+	}
+
+
 function ssb_share_get_url()
 	{
 		global $post;
@@ -204,6 +261,8 @@ add_action('admin_menu', 'ssb_menu_init');
 
 function ssb_options_init(){
 	register_setting('ssb_plugin_options', 'ssb_share_content_display');
+	register_setting('ssb_plugin_options', 'ssb_share_filter_posttype');	
+	register_setting('ssb_plugin_options', 'ssb_share_target_tab');	
 	register_setting('ssb_plugin_options', 'ssb_share_content_themes');	
 	register_setting('ssb_plugin_options', 'ssb_share_content_position');		
 	register_setting('ssb_plugin_options', 'ssb_share_content_icon_margin');		
