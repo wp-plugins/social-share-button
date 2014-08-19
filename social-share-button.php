@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Social Share Button
-Plugin URI: http://kentothemes.com
+Plugin URI: 
 Description: Social share buttons display on post or page or custom post.
 Version: 1.5
-Author: kentothemes
-Author URI: http://kentothemes.com
+Author: wpkids
+Author URI: 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */

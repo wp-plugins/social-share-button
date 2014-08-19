@@ -1,5 +1,5 @@
 === Social Share Button ===
-Contributors: kentothemes
+Contributors: wpkids
 Donate link: 
 Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin, social share plugin wordpress, Social Media Plugins, Social Media share
 Requires at least: 3.8
@@ -26,7 +26,6 @@ Displaying social share button on your website is most powerful way to boost you
 * share count for custom social share.
 
 
-Plugin Details: http://kentothemes.com/items/social/social-share-button-for-wordpress/
 
 
 == Installation ==
