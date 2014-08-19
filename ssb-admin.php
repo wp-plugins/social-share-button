@@ -363,14 +363,14 @@ jQuery(document).ready(function(jQuery)
         <div class="option-title"><strong>Need Help ?</strong>
         
         </div>
-        <div class="option-descriptions">Please report any issue via our support forum <a href="http://kentothemes.com/questions-answers/">kentothemes.com &raquo; Q&A</a> or ask any question if you need.
+        <div class="option-descriptions">Please report any issue via support forum <a href="http://wordpress.org/support/plugin/social-share-button">wordpress.org &raquo; support</a>.
         
         
         
 <?php
 
 
-				$plugin_link = 'http://kentothemes.com/items/social/social-share-button-for-wordpress/';
+				$plugin_link = 'http://wordpress.org/plugins/social-share-button/';
 				$ssb_share = '';
 				$ssb_share.= '<br /><br /><strong>Help us by sharing with your friends.<strong><br /><table ><tr>
 				<td width="90">
