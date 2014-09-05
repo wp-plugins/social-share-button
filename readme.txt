@@ -3,7 +3,7 @@ Contributors: wpkids
 Donate link: 
 Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin, social share plugin wordpress, Social Media Plugins, Social Media share
 Requires at least: 3.8
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
