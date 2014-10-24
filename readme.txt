@@ -1,10 +1,10 @@
 === Social Share Button ===
-Contributors: projectW
-Donate link: 
+Contributors: paratheme
+Donate link: http://paratheme.com
 Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin, social share plugin wordpress, Social Media Plugins, Social Media share
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 1.5
+Stable tag: 1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,12 @@ and visit your website or single post.
 5. Hexa Style.
 
 == Changelog ==
+
+
+= 1.6 =
+*  25/10/2014 update setting panel.
+*  25/10/2014 choose button to display.
+
 
 = 1.5 =
 * Add pin button for defualt share buttons.

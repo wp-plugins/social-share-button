@@ -6,6 +6,7 @@ function ssb_share_body()
 		
 		$ssb_share_content_themes = get_option( 'ssb_share_content_themes' );
 		$ssb_share_target_tab = get_option( 'ssb_share_target_tab' );
+		$ssb_social_sites = get_option( 'ssb_social_sites' );		
 		
 		if($ssb_share_target_tab=='new')
 			{
@@ -136,14 +137,39 @@ function ssb_share_body()
 			
 		else if($ssb_share_content_themes=='flat' || $ssb_share_content_themes=='round'|| $ssb_share_content_themes=='wide')
 			{
+				
+				if($ssb_social_sites['fb']=="fb")
+					{
+						$ssb_share_icons.="
+					<a ".$ssb_share_target_tab." class='fb' href='https://www.facebook.com/sharer/sharer.php?u=".ssb_share_get_url()."' ><span class='icon'></span><span class='count'>".$ssb_count_fb."</span></a>";
+					}
+				
+				if($ssb_social_sites['gplus']=="gplus")
+					{
+					$ssb_share_icons.= "<a ".$ssb_share_target_tab." class='gplus' href='https://plus.google.com/share?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_gplus."</span></a>";
+					}
+				if($ssb_social_sites['twitter']=="twitter")
+					{
+					$ssb_share_icons.= "<a ".$ssb_share_target_tab." class='twitter' href='https://twitter.com/intent/tweet?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_twitter."</span></a>";
+					}
+					
+				if($ssb_social_sites['linkedin']=="linkedin")
+					{
+					$ssb_share_icons.= "<a ".$ssb_share_target_tab." class='linkedin' href='https://www.linkedin.com/shareArticle?mini=true&url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_linkedin."</span></a>";
+					}
+				if($ssb_social_sites['pineterst']=="pineterst")
+					{
+					$ssb_share_icons.= "<a ".$ssb_share_target_tab." class='pineterst' href='https://pinterest.com/pin/create/button/?url=".ssb_share_get_url()."&media=".ssb_share_get_image()."'><span class='icon'></span><span class='count'>".$ssb_count_pineterst."</span></a>";
+					}
 
-				$ssb_share_icons.="
-					<a ".$ssb_share_target_tab." class='fb' href='https://www.facebook.com/sharer/sharer.php?u=".ssb_share_get_url()."' ><span class='icon'></span><span class='count'>".$ssb_count_fb."</span></a>
-					<a ".$ssb_share_target_tab." class='gplus' href='https://plus.google.com/share?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_gplus."</span></a>
-					<a ".$ssb_share_target_tab." class='twitter' href='https://twitter.com/intent/tweet?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_twitter."</span></a>
-					<a ".$ssb_share_target_tab." class='linkedin' href='https://www.linkedin.com/shareArticle?mini=true&url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_linkedin."</span></a>
-					<a ".$ssb_share_target_tab." class='pineterst' href='https://pinterest.com/pin/create/button/?url=".ssb_share_get_url()."&media=".ssb_share_get_image()."'><span class='icon'></span><span class='count'>".$ssb_count_pineterst."</span></a>
-					<a ".$ssb_share_target_tab." class='reddit' href='http://www.reddit.com/submit?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_reddit."</span></a>";
+				if($ssb_social_sites['reddit']=="reddit")
+					{
+					$ssb_share_icons.= "<a ".$ssb_share_target_tab." class='reddit' href='http://www.reddit.com/submit?url=".ssb_share_get_url()."'><span class='icon'></span><span class='count'>".$ssb_count_reddit."</span></a>";
+					
+					}
+
+					
+					
 			}
 		else if($ssb_share_content_themes=='bodyname')
 			{

@@ -1,49 +1,82 @@
 <?php
 /*
-Plugin Name: Social Share Button
+Plugin Name: Social Share Button New
 Plugin URI: 
-Description: Social share buttons display on post or page or custom post.
-Version: 1.5
-Author: wpkids
-Author URI: 
+Description: Fully responsive and mobile ready meet the ssb showcase plugin for wordpress.
+Version: 1.6
+Author: paratheme
+Author URI: http://paratheme.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+if ( ! defined('ABSPATH')) exit;
 
-require_once('themes/icons-body.php');
-require_once('themes/icons-style.php');
-define('ssb_plugin_path', WP_PLUGIN_URL . '/' . plugin_basename( dirname(__FILE__) ) . '/' );
-function ssb_script()
+define('ssb_plugin_url', WP_PLUGIN_URL . '/' . plugin_basename( dirname(__FILE__) ) . '/' );
+define('ssb_plugin_dir', plugin_dir_path( __FILE__ ) );
+define('ssb_wp_url', 'http://wordpress.org/plugins/social-share-button/' );
+define('ssb_pro_url', '' );
+define('ssb_demo_url', '' );
+define('ssb_conatct_url', 'http://paratheme.com/contact' );
+define('ssb_plugin_name', 'Social Share Button' );
+define('ssb_share_url', 'https://wordpress.org/plugins/social-share-button/' );
+
+
+
+require_once( plugin_dir_path( __FILE__ ) . 'themes/icons-body.php');
+require_once( plugin_dir_path( __FILE__ ) . 'themes/icons-style.php');
+
+require_once( plugin_dir_path( __FILE__ ) . 'includes/ssb-functions.php');
+
+
+
+//Themes php files
+//require_once( plugin_dir_path( __FILE__ ) . 'themes/flat/index.php');
+
+
+
+
+function ssb_init_scripts()
 	{
 		wp_enqueue_script('jquery');
-		wp_enqueue_style('ssb-style', ssb_plugin_path.'css/style.css');
-		wp_enqueue_script('ssb-js', plugins_url( '/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
-		wp_localize_script( 'ssb-js', 'ssb_ajax', array( 'ssb_ajaxurl' => admin_url( 'admin-ajax.php')));
-	}
+		wp_enqueue_script('ssb_js', plugins_url( '/js/ssb-scripts.js' , __FILE__ ) , array( 'jquery' ));
+		wp_localize_script('ssb_js', 'ssb_ajax', array( 'ssb_ajaxurl' => admin_url( 'admin-ajax.php')));
+		
+		wp_enqueue_style('ssb-css', ssb_plugin_url.'css/ssb-style.css');
+		wp_enqueue_style('ssb-admin', ssb_plugin_url.'css/ssb-admin.css');
+		
+		
+		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_script( 'ssb-color-picker', plugins_url('/js/ssb-color-picker.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+		
+
+		
+		// Style for themes
+		//wp_enqueue_style('ssb-style-flat', ssb_plugin_url.'themes/flat/style.css');
 	
-add_action('init', 'ssb_script');
 
-
-
-
-
-
-register_activation_hook(__FILE__, 'ssb_share_activation');
-register_uninstall_hook(__FILE__, 'ssb_share_uninstall');
-
-
-function ssb_share_activation()
-	{
 		
-		$ssb_share_version = "1.5";
-		update_option('ssb_share_version', $ssb_share_version); //update plugin version.
+	}
+add_action("init","ssb_init_scripts");
+
+
+
+
+register_activation_hook(__FILE__, 'ssb_activation');
+register_uninstall_hook(__FILE__, 'ssb_uninstall');
+
+function ssb_activation(){
+		$ssb_version= "1.6";
+		update_option('ssb_version', $ssb_version); //update plugin version.
 		
+		$ssb_customer_type= "free"; //customer_type "free"
+		update_option('ssb_customer_type', $ssb_customer_type); //update plugin version.
 	}
 
 
 
-function ssb_share_uninstall()
+
+function ssb_uninstall()
 	{
 		
 		delete_post_meta_by_key( 'ssb_post_sites' ); //delete post meta from post
@@ -68,196 +101,9 @@ function ssb_share_uninstall()
 
 
 
-
-
-
-
-
-
-function ssb_ajax_form()
-	{	
-		$ssb_site = $_POST['ssb_site'];
-		$post_id = $_POST['post_id'];
-		
-		$ssb_post_sites = get_post_meta( $post_id, 'ssb_post_sites', true );
-
-	
-$ssb_post_sites['fb'] = $ssb_post_sites['fb'];
-$ssb_post_sites['gplus'] = $ssb_post_sites['gplus'];
-$ssb_post_sites['twitter'] = $ssb_post_sites['twitter'];
-$ssb_post_sites['linkedin'] = $ssb_post_sites['linkedin'];
-$ssb_post_sites['pineterst'] = $ssb_post_sites['pineterst'];
-$ssb_post_sites['reddit'] = $ssb_post_sites['reddit'];
-
-
-		if($ssb_site=="fb")
-			{
-			$ssb_post_sites['fb'] = $ssb_post_sites['fb']+1;
-			}
-		elseif($ssb_site=="gplus")
-			{
-			$ssb_post_sites['gplus'] = $ssb_post_sites['gplus']+1;
-			}
-		elseif($ssb_site=="twitter")
-			{
-			$ssb_post_sites['twitter'] = $ssb_post_sites['twitter']+1;
-			}
-		elseif($ssb_site=="linkedin")
-			{
-			$ssb_post_sites['linkedin'] = $ssb_post_sites['linkedin']+1;
-			}
-		elseif($ssb_site=="pineterst")
-			{
-			$ssb_post_sites['pineterst'] = $ssb_post_sites['pineterst']+1;
-			}
-		elseif($ssb_site=="reddit")
-			{
-			$ssb_post_sites['reddit'] = $ssb_post_sites['reddit']+1;
-			}
-
-		// trace stats
-		update_post_meta( $post_id, 'ssb_post_sites', $ssb_post_sites );
-		die();
-	}
-
-
-
-add_action('wp_ajax_ssb_ajax_form', 'ssb_ajax_form');
-add_action('wp_ajax_nopriv_ssb_ajax_form', 'ssb_ajax_form');
-
-
-
-
-function ssb_display($content)
-	{
-		$ssb_share_content_position = get_option( 'ssb_share_content_position' );
-		$ssb_share_content_display = get_option( 'ssb_share_content_display' );
-		$ssb_share_filter_posttype = get_option( 'ssb_share_filter_posttype' );
-		
-		
-		
-		
-
-		if($ssb_share_filter_posttype==NULL)
-			{
-				$type ="none";
-			}
-		else
-			{
-				$type = "";
-			foreach ( $ssb_share_filter_posttype as  $post_type => $post_type_value )
-				{
-			
-				$type .= $post_type.",";
-				}
-			}
-		
-		
-		if(is_singular(explode(',',$type)))
-			{
-				
-				$content_new = "";
-				if($ssb_share_content_position=='top')
-					{
-						$content_new.=ssb_share_icons();
-						$content_new .=$content;
-					}
-				elseif($ssb_share_content_position=='bottom')
-					{	
-						$content_new .=$content;
-						$content_new.=ssb_share_icons();
-						
-					}
-			
-				if($ssb_share_content_display=='yes')
-					{
-						return $content_new;
-					}
-				else
-					{
-						return $content;
-					}
-			
-			}	
-		else
-			{
-				return $content;
-			}
-	
-	
-	}
-
-add_filter('the_content', 'ssb_display');
-
-
-
-function ssb_share_icons()
-	{	
-		$ssb_share_content_themes = get_option( 'ssb_share_content_themes' );
-		$ssb_share_content_icon_margin = get_option( 'ssb_share_content_icon_margin' );		
-
-		$ssb_share_icons = "";
-		$ssb_share_icons.="<div class='ssb-share ".$ssb_share_content_themes."' post_id='".get_the_ID()."' >";
-		$ssb_share_icons.= ssb_share_body();
-		$ssb_share_icons.="</div>";	
-		
-
-		return $ssb_share_icons;
-	}
-
-
-
-function ssb_share_get_title()
-	{
-		global $post;
-		$title = get_the_title( $post->ID );
-		
-		return $title;	
-	}
-
-
-function ssb_share_get_url()
-	{
-		global $post;
-		$permalink = get_permalink( $post->ID );
-		
-		return $permalink;	
-	}
-
-
-
-function ssb_share_get_image()
-	{	global $post;
-		if ( has_post_thumbnail())
-			{
-				$post_thumbnail_id = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ));
-				$post_thumbnail_id = $post_thumbnail_id[0];
-		 	}
-		else
-			{
-				$post_thumbnail_id ="";
-			}
-		 
-	return $post_thumbnail_id;	
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////////
-
-add_action('admin_init', 'ssb_options_init' );
 add_action('admin_menu', 'ssb_menu_init');
+add_action('admin_init', 'ssb_options_init' );
+
 
 function ssb_options_init(){
 	register_setting('ssb_plugin_options', 'ssb_share_content_display');
@@ -268,15 +114,25 @@ function ssb_options_init(){
 	register_setting('ssb_plugin_options', 'ssb_share_content_icon_margin');		
 
     }
-	
-function ssb_settings(){
-	include('ssb-admin.php');	
-}
+
+
+
+function ssb_menu_help(){
+	include('ssb-help.php');	
+	}
+
+
+function ssb_menu_settings(){
+	include('ssb-settings.php');	
+	}
+
+
 
 function ssb_menu_init() {
-	add_menu_page(__('ssb','ssb'), __('SSB Settings','ssb'), 'manage_options', 'ssb_settings', 'ssb_settings');
-
-}
+	add_menu_page(__('ssb','ssb'), __('SSB Settings','ssb'), 'manage_options', 'ssb_menu_settings', 'ssb_menu_settings');
+	
+	add_submenu_page('ssb', __('Help & Upgrade','menu-ssb'), __('Help & Upgrade','menu-ssb'), 'manage_options', 'ssb_menu_help', 'ssb_menu_help');
+	}
 
 
 

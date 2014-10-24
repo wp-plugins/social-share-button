@@ -1,5 +1,21 @@
-jQuery(document).ready(function(jQuery)
+
+jQuery(document).ready(function($)
 	{
+		
+		
+		$(document).on('click', '.tab-nav li', function()
+			{
+				$(".active").removeClass("active");
+				$(this).addClass("active");
+				
+				var nav = $(this).attr("nav");
+				
+				$(".box li.tab-box").css("display","none");
+				$(".box"+nav).css("display","block");
+		
+			})
+		
+
 
 		// will be using for trace stats
 			jQuery(".ssb-share a").click(function(){
@@ -20,5 +36,18 @@ jQuery(document).ready(function(jQuery)
 						}
 					})
 		});
-					
-	})
+		
+		
+
+		
+	
+ 		
+
+	});	
+
+
+
+
+
+
+
