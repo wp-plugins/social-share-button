@@ -4,8 +4,8 @@ Plugin Name: Social Share Button New
 Plugin URI: 
 Description: Fully responsive and mobile ready meet the ssb showcase plugin for wordpress.
 Version: 1.6
-Author: paratheme
-Author URI: http://paratheme.com
+Author: projectW
+Author URI: 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -17,7 +17,8 @@ define('ssb_plugin_dir', plugin_dir_path( __FILE__ ) );
 define('ssb_wp_url', 'http://wordpress.org/plugins/social-share-button/' );
 define('ssb_pro_url', '' );
 define('ssb_demo_url', '' );
-define('ssb_conatct_url', 'http://paratheme.com/contact' );
+define('ssb_conatct_url', '' );
+define('ssb_qa_url', 'http://wordpress.org/support/plugin/social-share-button' );
 define('ssb_plugin_name', 'Social Share Button' );
 define('ssb_share_url', 'https://wordpress.org/plugins/social-share-button/' );
 
@@ -131,7 +132,7 @@ function ssb_menu_settings(){
 function ssb_menu_init() {
 	add_menu_page(__('ssb','ssb'), __('SSB Settings','ssb'), 'manage_options', 'ssb_menu_settings', 'ssb_menu_settings');
 	
-	add_submenu_page('ssb', __('Help & Upgrade','menu-ssb'), __('Help & Upgrade','menu-ssb'), 'manage_options', 'ssb_menu_help', 'ssb_menu_help');
+	add_submenu_page('ssb_menu_settings', __('Help & Upgrade','menu-ssb'), __('Help & Upgrade','menu-ssb'), 'manage_options', 'ssb_menu_help', 'ssb_menu_help');
 	}
 
 
