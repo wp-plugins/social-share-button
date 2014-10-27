@@ -44,8 +44,8 @@
   height: 30px;
   width: 30px;
 }
-.ssb-share a.pineterst span.icon {
-  background-image: url("pineterst.png");
+.ssb-share a.pinterest span.icon {
+  background-image: url("pinterest.png");
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -127,7 +127,7 @@
 .ssb-share.flat a.linkedin {
   background: none repeat scroll 0 0 #1183a6;
 }
-.ssb-share.flat a.pineterst {
+.ssb-share.flat a.pinterest {
   background: none repeat scroll 0 0 #CB2028;
 }
 .ssb-share.flat a.reddit {
@@ -186,7 +186,7 @@
 .ssb-share.round a.linkedin {
   background: none repeat scroll 0 0 #1183a6;
 }
-.ssb-share.round a.pineterst {
+.ssb-share.round a.pinterest {
   background: none repeat scroll 0 0 #CB2028;
 }
 .ssb-share.round a.reddit {
@@ -256,7 +256,7 @@
 .ssb-share.wide a.linkedin {
   background: none repeat scroll 0 0 #1183a6;
 }
-.ssb-share.wide a.pineterst {
+.ssb-share.wide a.pinterest {
   background: none repeat scroll 0 0 #CB2028;
 }
 .ssb-share.wide a.reddit {
@@ -349,10 +349,10 @@
 .ssb-share.bodyname a.linkedin span.icon {
   background: none !important;
 }
-.ssb-share.bodyname a.pineterst {
-  background: url("bodyname/pineterst.png") no-repeat scroll 0 0 #CB2028;
+.ssb-share.bodyname a.pinterest {
+  background: url("bodyname/pinterest.png") no-repeat scroll 0 0 #CB2028;
 }
-.ssb-share.bodyname a.pineterst span.icon {
+.ssb-share.bodyname a.pinterest span.icon {
   background: none !important;
 }
 .ssb-share.bodyname a.reddit {
@@ -446,10 +446,10 @@
 .ssb-share.packslide a.linkedin span.icon {
   background: none !important;
 }
-.ssb-share.packslide a.pineterst {
-  background: url("packslide/pineterst.png") no-repeat scroll 0 0 #CB2028;
+.ssb-share.packslide a.pinterest {
+  background: url("packslide/pinterest.png") no-repeat scroll 0 0 #CB2028;
 }
-.ssb-share.packslide a.pineterst span.icon {
+.ssb-share.packslide a.pinterest span.icon {
   background: none !important;
 }
 .ssb-share.packslide a.reddit {
@@ -534,10 +534,10 @@
 .ssb-share.hexa a.linkedin span.icon {
   background: none !important;
 }
-.ssb-share.hexa a.pineterst {
-  background: url("hexa/pineterst.png");
+.ssb-share.hexa a.pinterest {
+  background: url("hexa/pinterest.png");
 }
-.ssb-share.hexa a.pineterst span.icon {
+.ssb-share.hexa a.pinterest span.icon {
   background: none !important;
 }
 .ssb-share.hexa a.reddit {
@@ -624,7 +624,7 @@
 .ssb-share.hover-left a.linkedin {
   background: none repeat scroll 0 0 #1183a6;
 }
-.ssb-share.hover-left a.pineterst {
+.ssb-share.hover-left a.pinterest {
   background: none repeat scroll 0 0 #CB2028;
 }
 .ssb-share.hover-left a.reddit {
@@ -700,7 +700,7 @@
 .ssb-share.hover-right a.linkedin {
   background: none repeat scroll 0 0 #1183a6;
 }
-.ssb-share.hover-right a.pineterst {
+.ssb-share.hover-right a.pinterest {
   background: none repeat scroll 0 0 #CB2028;
 }
 .ssb-share.hover-right a.reddit {

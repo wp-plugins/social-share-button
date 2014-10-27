@@ -113,7 +113,7 @@
 				
 				<div class="option-box">
                     <p class="option-title">Open new tab when click share buttons.</p>
-                    <p class="option-info">When someone try to click share buttons it will open new tab to sahre link on social media sites.</p>
+                    <p class="option-info">When someone try to click share buttons it will open new tab to share link on social media sites.</p>
 					<select name="ssb_share_target_tab">
                     	<option value="new" <?php  if($ssb_share_target_tab=='new') echo "selected"; ?>>New</option>
                         <option value="same" <?php  if($ssb_share_target_tab=='same') echo "selected"; ?>>Same</option>
@@ -139,11 +139,11 @@
                     <p class="option-title">Display only these buttons.</p>
                     <p class="option-info"></p>
                     
-                    <label><input type="checkbox" name="ssb_social_sites[fb]" value="fb" <?php if($ssb_social_sites['fb']=="fb") echo "checked";?> />Fcaebook </label><br />
+                    <label><input type="checkbox" name="ssb_social_sites[fb]" value="fb" <?php if($ssb_social_sites['fb']=="fb") echo "checked";?> />Facebook</label><br />
                     <label><input type="checkbox" name="ssb_social_sites[twitter]" value="twitter" <?php if($ssb_social_sites['twitter']=="twitter") echo "checked";?> />Twitter </label><br />
-                    <label><input type="checkbox" name="ssb_social_sites[gplus]" value="gplus" <?php if($ssb_social_sites['gplus']=="gplus") echo "checked";?> />Google Pluse </label><br />
+                    <label><input type="checkbox" name="ssb_social_sites[gplus]" value="gplus" <?php if($ssb_social_sites['gplus']=="gplus") echo "checked";?> />Google+ </label><br />
                     <label><input type="checkbox" name="ssb_social_sites[linkedin]" value="linkedin" <?php if($ssb_social_sites['linkedin']=="linkedin") echo "checked";?> />Linkedin</label><br />
-                    <label><input type="checkbox" name="ssb_social_sites[pineterst]" value="pineterst" <?php if($ssb_social_sites['pineterst']=="pineterst") echo "checked";?> />Pineterst</label><br />
+                    <label><input type="checkbox" name="ssb_social_sites[pinterest]" value="pinterest" <?php if($ssb_social_sites['pinterest']=="pinterest") echo "checked";?> />Pinterest</label><br />
                     <label><input type="checkbox" name="ssb_social_sites[reddit]" value="reddit" <?php if($ssb_social_sites['reddit']=="reddit") echo "checked";?> />Reddit</label><br />
                     
                     
