@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Social Share Button New
+Plugin Name: Social Share Button
 Plugin URI: 
 Description: Fully responsive and mobile ready meet the ssb showcase plugin for wordpress.
 Version: 1.6
@@ -93,10 +93,25 @@ function ssb_uninstall()
 	}
 
 
+add_action('wp_head', 'ssb_open_graph');
 
+function ssb_open_graph()
+	{
+		$open_graph = '';
+			
+		if ( is_singular() ) 
+			{
+				$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
+				$post_thumbnail_url = wp_get_attachment_url( $post_thumbnail_id );
+				$open_graph .= '<meta property="og:image" content="'.$post_thumbnail_url.'" />';
+			} 
+		else 
+			{
 
-
-
+			}
+			
+		echo $open_graph;
+	}
 
 
 
