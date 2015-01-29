@@ -15,8 +15,11 @@
 			$ssb_share_content_icon_margin = get_option( 'ssb_share_content_icon_margin' );
 			$ssb_share_filter_posttype = get_option( 'ssb_share_filter_posttype' );			
 			$ssb_share_target_tab = get_option( 'ssb_share_target_tab' );
-			$ssb_social_sites = get_option( 'ssb_social_sites' );			
+			$ssb_social_sites = get_option( 'ssb_social_sites' );
 			
+			$ssb_share_archive_display = get_option( 'ssb_share_archive_display' );	
+			$ssb_share_home_display = get_option( 'ssb_share_home_display' );									
+			$ssb_share_excerpt_display = get_option( 'ssb_share_excerpt_display' );			
 			
 		}
 	else
@@ -56,7 +59,17 @@
 			$ssb_social_sites = stripslashes_deep($_POST['ssb_social_sites']);
 			update_option('ssb_social_sites', $ssb_social_sites);			
 			
+			$ssb_share_archive_display = $_POST['ssb_share_archive_display'];
+			update_option('ssb_share_archive_display', $ssb_share_archive_display);
+			
+			$ssb_share_home_display = $_POST['ssb_share_home_display'];
+			update_option('ssb_share_home_display', $ssb_share_home_display);
+			
+			$ssb_share_excerpt_display = $_POST['ssb_share_excerpt_display'];
+			update_option('ssb_share_excerpt_display', $ssb_share_excerpt_display);			
 					
+			
+							
 
 			?>
 			<div class="updated"><p><strong><?php _e('Changes Saved.' ); ?></strong></p></div>
@@ -68,9 +81,8 @@
 	
 	
 
-
-	
-	
+    $ssb_customer_type = get_option('ssb_customer_type');
+    $ssb_version = get_option('ssb_version');	
 	
 	
 ?>
@@ -90,18 +102,19 @@
 		?>
        
 	<br />
-	<div class="ssb-settings">
+	<div class="para-settings ssb-settings">
         <ul class="tab-nav">
             <li nav="1" class="nav1 active">SSB Options</li>
             <li nav="2" class="nav2">SSB Style</li>
             <li nav="3" class="nav3">SSB Content</li>
+            <li nav="4" class="nav4">Help & Upgrade</li>
         
         </ul>
 
         <ul class="box">
             <li style="display: block;" class="box1 tab-box active">
                 <div class="option-box">
-                    <p class="option-title">Display On Content.</p>
+                    <p class="option-title">Display On Content. (Enable/Disable)</p>
                     <p class="option-info">Choose 'yes' to display share buttons on content and choose 'No' to hide share buttons on post.</p>
                     
                     <select name="ssb_share_content_display">
@@ -110,6 +123,10 @@
                        
                     </select>
                 </div>
+                
+               
+                
+                
 				
 				<div class="option-box">
                     <p class="option-title">Open new tab when click share buttons.</p>
@@ -130,7 +147,9 @@
 
 				<div class="option-box">
                     <p class="option-title">Need Help ?</p>
-                    <p class="option-info">Please report any issue via support forum <a href="http://wordpress.org/support/plugin/social-share-button">wordpress.org &raquo; support</a>.</p>
+                    <p class="option-info">Feel free to Contact with any issue for this plugin, Ask any question via forum <a href="<?php echo ssb_qa_url;?>"><?php echo ssb_qa_url;?></a> <strong style="color:#139b50;">(free)</strong>
+                    
+                    </p>
                 </div>
 
 
@@ -327,6 +346,41 @@ jQuery(document).ready(function(jQuery)
             </li>
 
             <li class="box3 tab-box">
+            
+            
+            
+                <div class="option-box">
+                    <p class="option-title">Display On Archive.</p>
+                    <p class="option-info">Choose 'yes' to display share buttons on archive page's and choose 'No' to hide share buttons on archive.</p>
+                    <select name="ssb_share_archive_display">
+                    	<option value="no" <?php  if($ssb_share_archive_display=='no') echo "selected"; ?>>No</option>
+                        <option value="yes" <?php  if($ssb_share_archive_display=='yes') echo "selected"; ?>>Yes</option>  
+                    </select>
+                </div> 
+                
+                <div class="option-box">
+                    <p class="option-title">Display On Home.</p>
+                    <p class="option-info">Choose 'yes' to display share buttons on Home page and choose 'No' to hide share buttons on Home.</p>
+                    <select name="ssb_share_home_display">
+                    	<option value="no" <?php  if($ssb_share_home_display=='no') echo "selected"; ?>>No</option>
+                        <option value="yes" <?php  if($ssb_share_home_display=='yes') echo "selected"; ?>>Yes</option>
+                    </select>
+                </div>
+                
+                <div class="option-box">
+                    <p class="option-title">Display On Excerpt.</p>
+                    <p class="option-info">Choose 'yes' to display share buttons on excerpt and choose 'No' to hide share buttons on excerpt.</p>
+                    <select name="ssb_share_excerpt_display">
+                        <option value="no" <?php  if($ssb_share_excerpt_display=='no') echo "selected"; ?>>No</option>
+                        <option value="yes" <?php  if($ssb_share_excerpt_display=='yes') echo "selected"; ?>>Yes</option>
+                    </select>
+                </div>                
+                
+                
+                               
+            
+            
+            
 				<div class="option-box">
                     <p class="option-title">Display share button On These Post Type Only.</p>
                     <p class="option-info">By choosing post type you can filter display share button only these post type.</p>
@@ -344,6 +398,53 @@ jQuery(document).ready(function(jQuery)
 					
 					?>
                 </div>
+            </li>
+            
+            <li class="box4 tab-box">
+				<div class="option-box">
+                    <p class="option-title">Need Help ?</p>
+                    <p class="option-info">Feel free to contact with any issue for this plugin, Ask any question via forum <a href="<?php echo ssb_qa_url; ?>"><?php echo ssb_qa_url; ?></a> <strong style="color:#139b50;">(free)</strong><br />
+
+    <?php
+
+    if($ssb_customer_type=="free")
+        {
+    
+            echo 'You are using <strong> '.$ssb_customer_type.' version  '.$ssb_version.'</strong> of <strong>'.ssb_plugin_name.'</strong>, To get more feature you could try our premium version. ';
+            
+            echo '<br /><a href="'.ssb_pro_url.'">'.ssb_pro_url.'</a>';
+            
+        }
+    else
+        {
+    
+            echo 'Thanks for using <strong> premium version  '.$ssb_version.'</strong> of <strong>'.ssb_plugin_name.'</strong> ';	
+            
+            
+        }
+    
+     ?>       
+
+                    
+                    </p>
+
+                </div>
+                
+                
+				<div class="option-box">
+                    <p class="option-title">Please Share</p>
+                    <p class="option-info">If you like this plugin please share with your social share network.</p>
+                    <?php
+                    
+						echo ssb_share_plugin();
+					?>
+                </div>
+                
+                
+                
+                
+                
+                
             </li>
 
 </ul>

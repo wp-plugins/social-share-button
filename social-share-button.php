@@ -2,8 +2,8 @@
 /*
 Plugin Name: Social Share Button
 Plugin URI: 
-Description: Fully responsive and mobile ready meet the ssb showcase plugin for wordpress.
-Version: 1.6
+Description: Social Share Button is one of best plugin to display social share buttons under post with share count.
+Version: 1.7
 Author: projectW
 Author URI: 
 License: GPLv2 or later
@@ -21,19 +21,13 @@ define('ssb_conatct_url', '' );
 define('ssb_qa_url', 'http://wordpress.org/support/plugin/social-share-button' );
 define('ssb_plugin_name', 'Social Share Button' );
 define('ssb_share_url', 'https://wordpress.org/plugins/social-share-button/' );
-
+define('ssb_tutorial_video_url', '//www.youtube.com/embed/8OiNCDavSQg?rel=0' );
 
 
 require_once( plugin_dir_path( __FILE__ ) . 'themes/icons-body.php');
 require_once( plugin_dir_path( __FILE__ ) . 'themes/icons-style.php');
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/ssb-functions.php');
-
-
-
-//Themes php files
-//require_once( plugin_dir_path( __FILE__ ) . 'themes/flat/index.php');
-
 
 
 
@@ -44,18 +38,11 @@ function ssb_init_scripts()
 		wp_localize_script('ssb_js', 'ssb_ajax', array( 'ssb_ajaxurl' => admin_url( 'admin-ajax.php')));
 		
 		wp_enqueue_style('ssb-css', ssb_plugin_url.'css/ssb-style.css');
-		wp_enqueue_style('ssb-admin', ssb_plugin_url.'css/ssb-admin.css');
-		
-		
-		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'ssb-color-picker', plugins_url('/js/ssb-color-picker.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-		
 
 		
-		// Style for themes
-		//wp_enqueue_style('ssb-style-flat', ssb_plugin_url.'themes/flat/style.css');
-	
-
+		//ParaAdmin
+		wp_enqueue_style('ParaAdmin', ssb_plugin_url.'ParaAdmin/css/ParaAdmin.css');
+		wp_enqueue_script('ParaAdmin', plugins_url( 'ParaAdmin/js/ParaAdmin.js' , __FILE__ ) , array( 'jquery' ));
 		
 	}
 add_action("init","ssb_init_scripts");
@@ -67,7 +54,7 @@ register_activation_hook(__FILE__, 'ssb_activation');
 register_uninstall_hook(__FILE__, 'ssb_uninstall');
 
 function ssb_activation(){
-		$ssb_version= "1.6";
+		$ssb_version= "1.7";
 		update_option('ssb_version', $ssb_version); //update plugin version.
 		
 		$ssb_customer_type= "free"; //customer_type "free"
@@ -133,11 +120,6 @@ function ssb_options_init(){
 
 
 
-function ssb_menu_help(){
-	include('ssb-help.php');	
-	}
-
-
 function ssb_menu_settings(){
 	include('ssb-settings.php');	
 	}
@@ -146,8 +128,7 @@ function ssb_menu_settings(){
 
 function ssb_menu_init() {
 	add_menu_page(__('ssb','ssb'), __('SSB Settings','ssb'), 'manage_options', 'ssb_menu_settings', 'ssb_menu_settings');
-	
-	add_submenu_page('ssb_menu_settings', __('Help & Upgrade','menu-ssb'), __('Help & Upgrade','menu-ssb'), 'manage_options', 'ssb_menu_help', 'ssb_menu_help');
+
 	}
 
 

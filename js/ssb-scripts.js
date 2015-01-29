@@ -1,38 +1,30 @@
 
 jQuery(document).ready(function($)
 	{
-		
-		
-		$(document).on('click', '.tab-nav li', function()
-			{
-				$(".active").removeClass("active");
-				$(this).addClass("active");
-				
-				var nav = $(this).attr("nav");
-				
-				$(".box li.tab-box").css("display","none");
-				$(".box"+nav).css("display","block");
-		
-			})
-		
-
 
 		// will be using for trace stats
-			jQuery(".ssb-share a").click(function(){
+		
+		$(document).on('click', '.ssb-share a', function()
+			{
 				
-				var ssb_site = jQuery(this).attr('class');
-				var post_id = jQuery(this).parent().attr("post_id");
+				var ssb_site = $(this).attr('class');
+				var post_id = $(this).parent().attr("post_id");
+				
+				var count = parseInt($(this).children('.count').text());
+				
 				
 
 
-				jQuery.ajax(
+				$.ajax(
 					{
 					type:"POST",
 					url:ssb_ajax.ssb_ajaxurl,
 					data:{action:"ssb_ajax_form",ssb_site:ssb_site,post_id:post_id},
 					success:function(data)
 						{
-							
+							$('.ssb-share-'+post_id+' a.'+ssb_site).children('.count').text(count+1);
+							$('.ssb-share-'+post_id+' a.'+ssb_site).prop('disabled',true);
+							$('.ssb-share-'+post_id+' a.'+ssb_site).css('cursor','not-allowed');
 						}
 					})
 		});
