@@ -97,6 +97,62 @@
 
 
 
+.ssb-share .defualt-box-fb {
+  display: inline-block;
+  max-height: 65px;
+  max-width: 60px;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 5px;
+}
+
+.ssb-share .defualt-box-gplus {
+  display: inline-block;
+  max-height: 65px;
+  max-width: 60px;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 5px;
+}
+
+.ssb-share .defualt-box-twitter {
+  display: inline-block;
+  max-height: 65px;
+  max-width: 60px;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 5px;
+}
+.ssb-share .defualt-box-linkedin {
+  display: inline-block;
+  max-height: 65px;
+  max-width: 60px;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 5px;
+}
+.ssb-share .defualt-box-pinterest {
+  display: inline-block;
+  max-height: 65px;
+  max-width: 60px;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 5px;
+}
+.ssb-share .defualt-box-reddit {
+  display: inline-block;
+  max-height: 65px;
+  max-width: 60px;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 5px;
+}
+
+
+
+
+
+/* ******************************************** */
 
 .ssb-share.flat {
   display: inline-block;

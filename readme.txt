@@ -4,7 +4,7 @@ Donate link:
 Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin, social share plugin wordpress, Social Media Plugins, Social Media share
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.7
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,12 +51,16 @@ and visit your website or single post.
 == Changelog ==
 
 
+= 1.8 =
+*  30/01/2015 fix - twitter title share.
+*  30/01/2015 add - new theme default box.
+
 = 1.7 =
-*  25/10/2014 disable button after click.
-*  25/10/2014 Display On Archive.
-*  25/10/2014 Display On Home.
-*  25/10/2014 Display On Excerpt.
-*  25/10/2014 remove help page and add help tab.
+*  29/01/2015 disable button after click.
+*  29/01/2015 Display On Archive.
+*  29/01/2015 Display On Home.
+*  29/01/2015 Display On Excerpt.
+*  29/01/2015 remove help page and add help tab.
 
 
 

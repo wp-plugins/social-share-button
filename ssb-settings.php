@@ -87,10 +87,6 @@
 	
 ?>
 
-
-
-
-
 <div class="wrap">
 
 	<div id="icon-tools" class="icon32"><br></div><?php echo "<h2>".ssb_plugin_name." Settings</h2>";?>
@@ -214,6 +210,18 @@ span.ssb_share_content_themes_defualt
   width: 100px;
 	
 	}
+	
+
+span.ssb_share_content_themes_defualt_box
+	{
+  background: url("<?php echo ssb_plugin_url; ?>/css/admin-defualt-box.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 100px;
+  width: 100px;
+	
+	}	
+	
+	
 span.ssb_share_content_themes_flat {
   background: url("<?php echo ssb_plugin_url; ?>/css/admin-flat.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
   display: block;
@@ -305,6 +313,10 @@ jQuery(document).ready(function(jQuery)
 
         <div class="ssb_share_content_themes">
         	<label ><input type="radio" name="ssb_share_content_themes"  value="defualt" <?php  if($ssb_share_content_themes=='defualt') echo "checked"; ?>/><span title="Defualt" class="ssb_share_content_themes_defualt <?php  if($ssb_share_content_themes=='defualt') echo "selected"; ?>"></span></label>
+            
+        	<label ><input type="radio" name="ssb_share_content_themes"  value="defualt_box" <?php  if($ssb_share_content_themes=='defualt_box') echo "checked"; ?>/><span title="Defualt Box" class="ssb_share_content_themes_defualt_box <?php  if($ssb_share_content_themes=='defualt_box') echo "selected"; ?>"></span></label>            
+            
+            
             
         	<label ><input type="radio" name="ssb_share_content_themes"  value="flat" <?php  if($ssb_share_content_themes=='flat') echo "checked"; ?>/><span title="Flat" class="ssb_share_content_themes_flat <?php  if($ssb_share_content_themes=='flat') echo "selected"; ?>"></span></label>
             
