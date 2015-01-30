@@ -57,47 +57,76 @@
   width: 30px;
 }
 
+.ssb-share a.email span.icon {
+  background-image: url("email.png");
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
+
 .ssb-share a span.count {
   
 }
 
 
 
+/* ******************* defualt-button ************************* */
 
-
-
-
-
-
-
-
-
-.ssb-share.defualt table {
-  border: medium none !important;
-  border-collapse: collapse;
-}
-
-.ssb-share.defualt table tr {
-  border: medium none !important;
-}
-
-.ssb-share.defualt table tr td {
-  border: medium none !important;
+.ssb-share .defualt-button-fb,
+.ssb-share .defualt-button-gplus,
+.ssb-share .defualt-button-twitter,
+.ssb-share .defualt-button-linkedin,
+.ssb-share .defualt-button-pinterest,
+.ssb-share .defualt-button-reddit,
+.ssb-share .defualt-button-email {
   display: inline-block;
+  max-height: 30px;
+  max-width: 80px;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 5px;
+}
+
+.ssb-share .defualt-button-gplus {
+  max-width: 60px;
+}
+
+.ssb-share .defualt-button-reddit {
+  max-width: 122px;
+}
+
+.ssb-share .defualt-button-email {
+  background: none repeat scroll 0 0 rgb(221, 221, 221);
+  border-radius: 2px;
+  height: 25px;
+  overflow: hidden;
+}
+.ssb-share .defualt-button-email .icon {
+  background: url("email.png") no-repeat scroll 0 -3px rgba(0, 0, 0, 0);
   float: left;
-  height: 27px;
-  text-align: left;
-  vertical-align: top;
+  margin-right: 10px;
+}
+.ssb-share .defualt-button-email a {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
 }
 
 
 
 
-/* ******************************************** */
+/* ******************** defualt-box ************************ */
 
 
 
-.ssb-share .defualt-box-fb {
+.ssb-share .defualt-box-fb,
+.ssb-share .defualt-box-gplus,
+.ssb-share .defualt-box-twitter,
+.ssb-share .defualt-box-linkedin,
+.ssb-share .defualt-box-pinterest,
+.ssb-share .defualt-box-reddit,
+.ssb-share .defualt-box-email
+  {
   display: inline-block;
   max-height: 65px;
   max-width: 60px;
@@ -105,54 +134,23 @@
   vertical-align: top;
   padding: 0 5px;
 }
-
-.ssb-share .defualt-box-gplus {
-  display: inline-block;
-  max-height: 65px;
-  max-width: 60px;
-  overflow: hidden;
-  vertical-align: top;
-  padding: 0 5px;
+.ssb-share .defualt-box-email {
+  background: none repeat scroll 0 0 rgb(221, 221, 221);
+  border-radius: 2px;
+  text-align: center;
 }
 
-.ssb-share .defualt-box-twitter {
-  display: inline-block;
-  max-height: 65px;
-  max-width: 60px;
-  overflow: hidden;
-  vertical-align: top;
-  padding: 0 5px;
+.ssb-share .defualt-box-email a {
+  margin: 0 !important;
+  text-decoration: none;
 }
-.ssb-share .defualt-box-linkedin {
-  display: inline-block;
-  max-height: 65px;
-  max-width: 60px;
-  overflow: hidden;
-  vertical-align: top;
-  padding: 0 5px;
-}
-.ssb-share .defualt-box-pinterest {
-  display: inline-block;
-  max-height: 65px;
-  max-width: 60px;
-  overflow: hidden;
-  vertical-align: top;
-  padding: 0 5px;
-}
-.ssb-share .defualt-box-reddit {
-  display: inline-block;
-  max-height: 65px;
-  max-width: 60px;
-  overflow: hidden;
-  vertical-align: top;
-  padding: 0 5px;
+
+.ssb-share .defualt-box-email a .icon{
+
 }
 
 
-
-
-
-/* ******************************************** */
+/* ********************** flat ********************** */
 
 .ssb-share.flat {
   display: inline-block;
@@ -189,7 +187,9 @@
 .ssb-share.flat a.reddit {
   background: none repeat scroll 0 0 #7ccbff;
 }
-
+.ssb-share.flat a.email {
+  background: none repeat scroll 0 0 #0884f9;
+}
 
 .ssb-share.flat span.count {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9);
@@ -211,7 +211,7 @@
 
 
 
-/* ******************************************** */
+/* ********************* round *********************** */
 
 .ssb-share.round {
   display: inline-block;
@@ -225,10 +225,9 @@
   position: relative;
   vertical-align: top;
   width: 30px;
-}
-.ssb-share.round a {
   border-radius: 50%;
 }
+
 
 .ssb-share.round a.fb {
   background: none repeat scroll 0 0 #3A589B;
@@ -249,6 +248,9 @@
   background: none repeat scroll 0 0 #7ccbff;
 }
 
+.ssb-share.round a.email {
+  background: none repeat scroll 0 0 #0884f9;
+}
 
 
 
@@ -281,7 +283,7 @@
 
 
 
-/* ********************************* */
+/* ****************** wide *************** */
 
 
 
@@ -318,6 +320,10 @@
 .ssb-share.wide a.reddit {
   background: none repeat scroll 0 0 #7ccbff;
 }
+.ssb-share.wide a.email {
+  background: none repeat scroll 0 0 #0884f9;
+}
+
 
 .ssb-share.wide span.count {
   color: #FFFFFF;
@@ -333,7 +339,7 @@
 
 
 
-/* ********************************* */
+/* ***************** bodyname **************** */
 
 
 
@@ -418,6 +424,15 @@
   background: none !important;
 }
 
+.ssb-share.bodyname a.email {
+  background: url("bodyname/email.png") no-repeat scroll 0 0 #0884f9;
+}
+.ssb-share.bodyname a.email span.icon {
+  background: none !important;
+}
+
+
+
 
 
 .ssb-share.bodyname a:hover{
@@ -429,7 +444,7 @@
 
 
 
-/* ********************************* */
+/* ****************** packslide *************** */
 
 
 
@@ -515,6 +530,15 @@
   background: none !important;
 }
 
+.ssb-share.packslide a.email {
+  background: url("packslide/email.png") no-repeat scroll 0 0 #0884f9;
+}
+.ssb-share.packslide a.email span.icon {
+  background: none !important;
+}
+
+
+
 
 
 .ssb-share.packslide a:hover{
@@ -540,7 +564,7 @@
 
 
 
-/* ******************************************** */
+/* ********************** hexa ********************** */
 
 
 
@@ -603,6 +627,14 @@
   background: none !important;
 }
 
+.ssb-share.hexa a.email {
+  background: url("hexa/email.png");
+}
+.ssb-share.hexa a.email span.icon {
+  background: none !important;
+}
+
+
 
 
 .ssb-share.hexa span.count {
@@ -644,7 +676,7 @@
 
 
 
-/* ******************hover-left************************** */
+/* ****************** hover-left ************************** */
 
 
 
@@ -687,6 +719,10 @@
   background: none repeat scroll 0 0 #7ccbff;
 }
 
+.ssb-share.hover-left a.email {
+  background: none repeat scroll 0 0 #0884f9;
+}
+
 
 .ssb-share.hover-left span.count {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9);
@@ -705,17 +741,6 @@
 	visibility:visible;
 	top: -15px;
 	}
-
-
-
-/* ******************************************** */
-
-
-
-
-
-
-
 
 
 
@@ -762,7 +787,9 @@
 .ssb-share.hover-right a.reddit {
   background: none repeat scroll 0 0 #7ccbff;
 }
-
+.ssb-share.hover-right a.email {
+  background: none repeat scroll 0 0 #0884f9;
+}
 
 .ssb-share.hover-right span.count {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9);
@@ -782,9 +809,6 @@
 	top: -15px;
 	}
 
-
-
-/* ******************************************** */
 
 
 

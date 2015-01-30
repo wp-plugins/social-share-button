@@ -160,7 +160,7 @@
                     <label><input type="checkbox" name="ssb_social_sites[linkedin]" value="linkedin" <?php if($ssb_social_sites['linkedin']=="linkedin") echo "checked";?> />Linkedin</label><br />
                     <label><input type="checkbox" name="ssb_social_sites[pinterest]" value="pinterest" <?php if($ssb_social_sites['pinterest']=="pinterest") echo "checked";?> />Pinterest</label><br />
                     <label><input type="checkbox" name="ssb_social_sites[reddit]" value="reddit" <?php if($ssb_social_sites['reddit']=="reddit") echo "checked";?> />Reddit</label><br />
-                    
+                    <label><input type="checkbox" name="ssb_social_sites[email]" value="email" <?php if($ssb_social_sites['email']=="email") echo "checked";?> />Email</label><br />                    
                     
                     
                     

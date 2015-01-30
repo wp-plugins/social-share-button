@@ -17,7 +17,8 @@ function ssb_ajax_form()
 		$ssb_post_sites['linkedin'] = (int)$ssb_post_sites['linkedin'];
 		$ssb_post_sites['pinterest'] = (int)$ssb_post_sites['pinterest'];
 		$ssb_post_sites['reddit'] = (int)$ssb_post_sites['reddit'];
-
+		$ssb_post_sites['email'] = (int)$ssb_post_sites['email'];
+		
 
 		if($ssb_site=="fb")
 			{
@@ -43,6 +44,11 @@ function ssb_ajax_form()
 			{
 			$ssb_post_sites['reddit'] = $ssb_post_sites['reddit']+1;
 			}
+		elseif($ssb_site=="email")
+			{
+			$ssb_post_sites['email'] = $ssb_post_sites['email']+1;
+			}	
+					
 
 		// trace stats
 		update_post_meta( $post_id, 'ssb_post_sites', $ssb_post_sites );
