@@ -13,7 +13,12 @@
   width: 100%;
 }
 
-
+.ssb-share a span.icon {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background-size: 100% auto;
+}
 
 .ssb-share a.fb span.icon {
   background-image: url("fb.png");
@@ -27,6 +32,7 @@
   display: inline-block;
   height: 30px;
   width: 30px;
+
 }
 
 
@@ -294,6 +300,8 @@
 }
 
 .ssb-share.wide a {
+  background-color: rgb(221, 221, 221);
+  background-repeat: no-repeat;
   display: inline-block;
   float: left;
   height: 30px;
@@ -367,10 +375,12 @@
 
 
 .ssb-share.bodyname a span {
-  color: #FFFFFF;
+  background-size: 100% auto !important;
+  color: rgb(255, 255, 255);
   display: inline-block;
   height: 22px;
   vertical-align: top;
+  width: 20px;
 }
 .ssb-share.bodyname a span.body {
   padding-left: 2px;
@@ -477,6 +487,13 @@
   height: 22px;
   vertical-align: top;
 }
+.ssb-share.packslide a span.icon {
+  background-size: 100% auto;
+  height: 100%;
+  width: 20px;
+}
+
+
 .ssb-share.packslide a span.body {
   padding-left: 2px;
   padding-top: 2px;

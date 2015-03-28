@@ -16,6 +16,10 @@
 			$ssb_share_filter_posttype = get_option( 'ssb_share_filter_posttype' );			
 			$ssb_share_target_tab = get_option( 'ssb_share_target_tab' );
 			$ssb_social_sites = get_option( 'ssb_social_sites' );
+			$ssb_social_sites_domain = get_option( 'ssb_social_sites_domain' );			
+			$ssb_social_sites_domain_url = get_option( 'ssb_social_sites_domain_url' );
+			$ssb_social_sites_domain_icon = get_option( 'ssb_social_sites_domain_icon' );						
+			
 			
 			$ssb_share_archive_display = get_option( 'ssb_share_archive_display' );	
 			$ssb_share_home_display = get_option( 'ssb_share_home_display' );									
@@ -59,6 +63,19 @@
 			$ssb_social_sites = stripslashes_deep($_POST['ssb_social_sites']);
 			update_option('ssb_social_sites', $ssb_social_sites);			
 			
+			$ssb_social_sites_domain = stripslashes_deep($_POST['ssb_social_sites_domain']);
+			update_option('ssb_social_sites_domain', $ssb_social_sites_domain);				
+			
+			$ssb_social_sites_domain_url = stripslashes_deep($_POST['ssb_social_sites_domain_url']);
+			update_option('ssb_social_sites_domain_url', $ssb_social_sites_domain_url);				
+			
+			$ssb_social_sites_domain_icon = stripslashes_deep($_POST['ssb_social_sites_domain_icon']);
+			update_option('ssb_social_sites_domain_icon', $ssb_social_sites_domain_icon);				
+			
+			
+			
+			
+			
 			$ssb_share_archive_display = $_POST['ssb_share_archive_display'];
 			update_option('ssb_share_archive_display', $ssb_share_archive_display);
 			
@@ -83,7 +100,45 @@
 
     $ssb_customer_type = get_option('ssb_customer_type');
     $ssb_version = get_option('ssb_version');	
-	
+
+
+
+
+
+
+
+
+
+
+            if(empty($ssb_social_sites_domain))
+                {
+                    $ssb_social_sites_domain = array(
+														"reddit"=>"reddit",						
+														"email"=>"email",					
+														"fb"=>"fb",
+														"twitter"=>"twitter",
+														"gplus"=>"gplus",
+														"pinterest"=>"pinterest");
+                    
+                }
+				
+            if(empty($ssb_social_sites_domain_url))
+                {
+                    $ssb_social_sites_domain_url = array(
+														"reddit"=>"http://www.reddit.com/submit?title={title}&url={url}",						
+														"email"=>"mailto:?subject={title}&body={url}",					
+														"fb"=>"https://www.facebook.com/sharer/sharer.php?u={url}",
+														"twitter"=>"https://twitter.com/intent/tweet?url={url}&text={title}",
+														"gplus"=>"https://plus.google.com/share?url={url}",
+														"pinterest"=>"https://pinterest.com/pin/create/button/?url={url}&media={thumb_url}");
+                    
+                }
+
+
+
+
+
+
 	
 ?>
 
@@ -103,6 +158,7 @@
             <li nav="1" class="nav1 active">SSB Options</li>
             <li nav="2" class="nav2">SSB Style</li>
             <li nav="3" class="nav3">SSB Content</li>
+            <li nav="5" class="nav5">Social Sites</li>            
             <li nav="4" class="nav4">Help & Upgrade</li>
         
         </ul>
@@ -154,20 +210,25 @@
                     <p class="option-title">Display only these buttons.</p>
                     <p class="option-info"></p>
                     
-                    <label><input type="checkbox" name="ssb_social_sites[fb]" value="fb" <?php if($ssb_social_sites['fb']=="fb") echo "checked";?> />Facebook</label><br />
-                    <label><input type="checkbox" name="ssb_social_sites[twitter]" value="twitter" <?php if($ssb_social_sites['twitter']=="twitter") echo "checked";?> />Twitter </label><br />
-                    <label><input type="checkbox" name="ssb_social_sites[gplus]" value="gplus" <?php if($ssb_social_sites['gplus']=="gplus") echo "checked";?> />Google+ </label><br />
-                    <label><input type="checkbox" name="ssb_social_sites[linkedin]" value="linkedin" <?php if($ssb_social_sites['linkedin']=="linkedin") echo "checked";?> />Linkedin</label><br />
-                    <label><input type="checkbox" name="ssb_social_sites[pinterest]" value="pinterest" <?php if($ssb_social_sites['pinterest']=="pinterest") echo "checked";?> />Pinterest</label><br />
-                    <label><input type="checkbox" name="ssb_social_sites[reddit]" value="reddit" <?php if($ssb_social_sites['reddit']=="reddit") echo "checked";?> />Reddit</label><br />
-                    <label><input type="checkbox" name="ssb_social_sites[email]" value="email" <?php if($ssb_social_sites['email']=="email") echo "checked";?> />Email</label><br />                    
                     
                     
+                    <?php
                     
-                    
-                    
-                    
-                    
+					foreach($ssb_social_sites_domain as $domain)
+						{
+							if(empty($ssb_social_sites[$domain]))
+								{
+									$ssb_social_sites[$domain] = '';
+								}
+							
+							
+							echo '<label><input type="checkbox" name="ssb_social_sites['.$domain.']" value="'.$domain.'"';
+							if($ssb_social_sites[$domain] == $domain) echo "checked";
+							echo '  />'.$domain.'</label><br/>';
+						}
+					
+					?>
+
                 </div>
 
 
@@ -411,7 +472,90 @@ jQuery(document).ready(function(jQuery)
 					?>
                 </div>
             </li>
+            <li class="box5 tab-box">
+				<div class="option-box">
+                    <p class="option-title">Social sites domain</p>
+                    <p class="option-info">Now you can add custom social site which is not added, default sites are reddit, email, fb, twitter, gplus, pinterest.
+                    <br />
+                    String {url}, {title}, {thumb_url} will replace by post url, title and thumbnail url.
+                    </p>
+                
+			<table class="ssb_social_sites_domain" id="ssb_social_sites_domain">
+				<tr>
+                <th></th>
+                <th>Domain</th> 
+                <th>Share URL</th>                 
+                <th>Icon</th> 
+                <th>Delete</th>                
+                                               
+                </tr>
+              
+            <?php 
+
+				
+				
+				
+				
+				
+				
+				
+				
+
+            foreach ($ssb_social_sites_domain as $value) {
+                if(!empty($value))
+                    {
+                        ?>
+                    <tr>
+                    	<td>*</td>
+                        <td>
+                       		<input type="text" name="ssb_social_sites_domain[<?php echo $value; ?>]" value="<?php if(isset($ssb_social_sites_domain[$value])) echo $ssb_social_sites_domain[$value]; else echo $value; ?>"  /><br />
+                        </td>
+                        
+                        <td width="450">
+                       		<input type="text" style="width:100%" name="ssb_social_sites_domain_url[<?php echo $value; ?>]" value="<?php if(isset($ssb_social_sites_domain_url[$value])) echo $ssb_social_sites_domain_url[$value]; ?>"  /><br />
+                        </td> 
+                        
+                        <td>                    
+                            <span style=" <?php if(!empty($ssb_social_sites_domain_icon[$value])) echo 'background:url('.$ssb_social_sites_domain_icon[$value].') no-repeat scroll 0 0 rgba(0, 0, 0, 0);';  ?>" title="Icon for this field." class="ssb_social_sites_domain_icon <?php if(empty($ssb_social_sites_domain_icon[$value])) echo 'empty_icon';?>" icon-name="<?php echo $value; ?>"> </span>
+                            
+                            
+                            <input class="ssb_social_sites_domain_icon_<?php echo $value; ?>" name="ssb_social_sites_domain_icon[<?php echo $value; ?>]" type="hidden" value="<?php if(isset($ssb_social_sites_domain_icon[$value])) echo $ssb_social_sites_domain_icon[$value]; ?>" />
+                        </td>                        
+                                               
+                        <td>                    
+                        <span class="ssb_social_sites_domain_remove">X</span>
+                        </td>
+                    </tr>
+                        <?php
+						
+						
+                    
+                    }
+            }
             
+            ?>
+
+                    
+                    </table> 
+                    
+        
+        
+ <script>
+
+	jQuery(document).ready(function() {
+
+		// Initialise the table
+		jQuery("#ssb_social_sites_domain").tableDnD();
+
+	});
+
+</script>
+
+<div class="button ssb_social_sites_domain_add"><?php _e('Add New','ssb'); ?></div>
+
+
+                </div>
+            </li>         
             <li class="box4 tab-box">
 				<div class="option-box">
                     <p class="option-title">Need Help ?</p>

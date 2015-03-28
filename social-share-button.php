@@ -3,7 +3,7 @@
 Plugin Name: Social Share Button
 Plugin URI: 
 Description: Social Share Button is one of best plugin to display social share buttons under post with share count.
-Version: 1.9
+Version: 1.10
 Author: projectW
 Author URI: 
 License: GPLv2 or later
@@ -37,7 +37,8 @@ function ssb_init_scripts()
 		wp_localize_script('ssb_js', 'ssb_ajax', array( 'ssb_ajaxurl' => admin_url( 'admin-ajax.php')));
 		
 		wp_enqueue_style('ssb-css', ssb_plugin_url.'css/ssb-style.css');
-
+		wp_enqueue_style('ssb-admin-css', ssb_plugin_url.'css/ssb-admin.css');		
+		wp_enqueue_script('jquery.tablednd', plugins_url( '/js/jquery.tablednd.js' , __FILE__ ) , array( 'jquery' ));
 		
 		//ParaAdmin
 		wp_enqueue_style('ParaAdmin', ssb_plugin_url.'ParaAdmin/css/ParaAdmin.css');
@@ -53,7 +54,7 @@ register_activation_hook(__FILE__, 'ssb_activation');
 register_uninstall_hook(__FILE__, 'ssb_uninstall');
 
 function ssb_activation(){
-		$ssb_version= "1.9";
+		$ssb_version= "1.10";
 		update_option('ssb_version', $ssb_version); //update plugin version.
 		
 		$ssb_customer_type= "free"; //customer_type "free"

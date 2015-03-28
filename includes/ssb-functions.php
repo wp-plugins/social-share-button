@@ -9,46 +9,14 @@ function ssb_ajax_form()
 		$post_id = $_POST['post_id'];
 		
 		$ssb_post_sites = get_post_meta( $post_id, 'ssb_post_sites', true );
+		$ssb_social_sites_domain = get_option( 'ssb_social_sites_domain' );
 
-	
-		$ssb_post_sites['fb'] = (int)$ssb_post_sites['fb'];
-		$ssb_post_sites['gplus'] = (int)$ssb_post_sites['gplus'];
-		$ssb_post_sites['twitter'] = (int)$ssb_post_sites['twitter'];
-		$ssb_post_sites['linkedin'] = (int)$ssb_post_sites['linkedin'];
-		$ssb_post_sites['pinterest'] = (int)$ssb_post_sites['pinterest'];
-		$ssb_post_sites['reddit'] = (int)$ssb_post_sites['reddit'];
-		$ssb_post_sites['email'] = (int)$ssb_post_sites['email'];
-		
+		foreach($ssb_social_sites_domain as $icon)
+			{
+				$ssb_post_sites[$icon] = (int)$ssb_post_sites[$icon];
+				$ssb_post_sites[$icon] = $ssb_post_sites[$icon]+1;
+			}
 
-		if($ssb_site=="fb")
-			{
-			$ssb_post_sites['fb'] = $ssb_post_sites['fb']+1;
-			}
-		elseif($ssb_site=="gplus")
-			{
-			$ssb_post_sites['gplus'] = $ssb_post_sites['gplus']+1;
-			}
-		elseif($ssb_site=="twitter")
-			{
-			$ssb_post_sites['twitter'] = $ssb_post_sites['twitter']+1;
-			}
-		elseif($ssb_site=="linkedin")
-			{
-			$ssb_post_sites['linkedin'] = $ssb_post_sites['linkedin']+1;
-			}
-		elseif($ssb_site=="pinterest")
-			{
-			$ssb_post_sites['pinterest'] = $ssb_post_sites['pinterest']+1;
-			}
-		elseif($ssb_site=="reddit")
-			{
-			$ssb_post_sites['reddit'] = $ssb_post_sites['reddit']+1;
-			}
-		elseif($ssb_site=="email")
-			{
-			$ssb_post_sites['email'] = $ssb_post_sites['email']+1;
-			}	
-					
 
 		// trace stats
 		update_post_meta( $post_id, 'ssb_post_sites', $ssb_post_sites );
