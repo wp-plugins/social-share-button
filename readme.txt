@@ -4,7 +4,7 @@ Donate link:
 Tags: social share buttons, social share button, share button, social share, social share plugin, share plugin, social share plugin wordpress, Social Media Plugins, Social Media share
 Requires at least: 3.8
 Tested up to: 4.1.1
-Stable tag: 1.10
+Stable tag: 1.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,10 @@ and visit your website or single post.
 
 == Changelog ==
 
+
+
+= 1.11 =
+*  29/03/2015 fix - issue fixed with share count.
 
 = 1.10 =
 *  29/03/2015 add - add your own social site.

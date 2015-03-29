@@ -13,8 +13,16 @@ function ssb_ajax_form()
 
 		foreach($ssb_social_sites_domain as $icon)
 			{
-				$ssb_post_sites[$icon] = (int)$ssb_post_sites[$icon];
-				$ssb_post_sites[$icon] = $ssb_post_sites[$icon]+1;
+				if($ssb_site == $icon)
+					{
+						$ssb_post_sites[$icon] = (int)$ssb_post_sites[$icon];
+						$ssb_post_sites[$icon] = $ssb_post_sites[$icon]+1;
+					}
+				else
+					{
+						$ssb_post_sites[$icon] = (int)$ssb_post_sites[$icon];
+						$ssb_post_sites[$icon] = $ssb_post_sites[$icon];
+					}
 			}
 
 
