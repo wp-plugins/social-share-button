@@ -12,6 +12,51 @@ function ssb_share_body()
 		$ssb_social_sites_domain_url = get_option( 'ssb_social_sites_domain_url' );			
 		$ssb_social_sites_domain_icon = get_option( 'ssb_social_sites_domain_icon' );		
 		
+		
+		
+		
+		
+            if(empty($ssb_social_sites_domain))
+                {
+                    $ssb_social_sites_domain = array(
+														"reddit"=>"reddit",						
+														"email"=>"email",					
+														"fb"=>"fb",
+														"twitter"=>"twitter",
+														"gplus"=>"gplus",
+														"pinterest"=>"pinterest");
+                    
+                }
+				
+            if(empty($ssb_social_sites_domain_url))
+                {
+                    $ssb_social_sites_domain_url = array(
+														"reddit"=>"http://www.reddit.com/submit?title={title}&url={url}",						
+														"email"=>"mailto:?subject={title}&body={url}",					
+														"fb"=>"https://www.facebook.com/sharer/sharer.php?u={url}",
+														"twitter"=>"https://twitter.com/intent/tweet?url={url}&text={title}",
+														"gplus"=>"https://plus.google.com/share?url={url}",
+														"pinterest"=>"https://pinterest.com/pin/create/button/?url={url}&media={thumb_url}");
+                    
+                }
+		
+		
+		
+            if(empty($ssb_social_sites_domain_icon))
+                {
+                    $ssb_social_sites_domain_icon = array(
+														"reddit"=>"",						
+														"email"=>"",					
+														"fb"=>"",
+														"twitter"=>"",
+														"gplus"=>"",
+														"pinterest"=>"");
+                    
+                }		
+		
+		
+		
+		
 		if($ssb_share_target_tab=='new')
 			{$ssb_share_target_tab = "target='_blank'";}
 		elseif($ssb_share_target_tab=='same')
