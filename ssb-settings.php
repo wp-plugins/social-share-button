@@ -158,7 +158,7 @@
             <li nav="1" class="nav1 active">SSB Options</li>
             <li nav="2" class="nav2">SSB Style</li>
             <li nav="3" class="nav3">SSB Content</li>
-            <li nav="5" class="nav5">Social Sites</li>            
+            <li nav="5" class="nav5"><i>new</i>Social Sites</li>            
             <li nav="4" class="nav4">Help & Upgrade</li>
         
         </ul>
