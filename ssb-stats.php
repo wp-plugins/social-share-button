@@ -12,7 +12,16 @@
 
 	$ssb_social_sites_domain = get_option( 'ssb_social_sites_domain' );
 	$posts_per_page = get_option( 'posts_per_page' );
-
+	$ssb_share_filter_posttype = get_option( 'ssb_share_filter_posttype' );
+	$i = 0;
+	foreach($ssb_share_filter_posttype as $key=>$value)
+		{
+			$post_types[$i] = $key; 
+			$i++;
+		}
+	
+	
+		
 	if(empty($ssb_social_sites_domain))
 		{
 			$ssb_social_sites_domain = array(
@@ -67,6 +76,7 @@
                     <p class="option-title">Stats for share by post</p>
                     <p class="option-info"></p>
 					<?php
+
 					
 					if(isset($_GET['paged']))
 						{
@@ -82,7 +92,7 @@
 					global $wp_query;
 					
 					$args = 	array (
-							'post_type' => 'post',
+							'post_type' => $post_types,
 							'posts_per_page' => $posts_per_page,
 							'paged' => $paged,
 							
