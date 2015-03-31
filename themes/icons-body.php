@@ -8,6 +8,8 @@ function ssb_share_body()
 		$ssb_share_target_tab = get_option( 'ssb_share_target_tab' );
 		$ssb_social_sites = get_option( 'ssb_social_sites' );
 		
+		$ssb_share_total_count_display = get_option( 'ssb_share_total_count_display' );		
+		
 		$ssb_social_sites_domain = get_option( 'ssb_social_sites_domain' );				
 		$ssb_social_sites_domain_url = get_option( 'ssb_social_sites_domain_url' );			
 		$ssb_social_sites_domain_icon = get_option( 'ssb_social_sites_domain_icon' );		
@@ -234,6 +236,12 @@ function ssb_share_body()
 			
 		else if($ssb_share_content_themes=='flat' || $ssb_share_content_themes=='round'|| $ssb_share_content_themes=='wide')
 			{
+				if($ssb_share_total_count_display == 'yes')
+					{
+						$ssb_share_icons.= "<a class='total-count' href='#' >Total Share: ".ssb_total_share_count_by_postid()."</a>";
+					}
+				
+				
 				
 				foreach($ssb_social_sites as $icon)
 					{
@@ -270,7 +278,10 @@ function ssb_share_body()
 			}
 		else if($ssb_share_content_themes=='bodyname')
 			{
-
+				if($ssb_share_total_count_display == 'yes')
+					{
+				$ssb_share_icons.= "<a class='total-count' href='#' >Total Share: ".ssb_total_share_count_by_postid()."</a>";
+					}
 				foreach($ssb_social_sites as $icon)
 					{
 						if(!empty($ssb_social_sites[$icon]))
@@ -308,8 +319,10 @@ function ssb_share_body()
 			
 		else if($ssb_share_content_themes=='packslide' || $ssb_share_content_themes=='hexa')
 			{
-
-
+				if($ssb_share_total_count_display == 'yes')
+					{
+						$ssb_share_icons.= "<a class='total-count' href='#' >Total Share: ".ssb_total_share_count_by_postid()."</a>";
+					}
 				foreach($ssb_social_sites as $icon)
 					{
 						if(!empty($ssb_social_sites[$icon]))
@@ -358,8 +371,10 @@ function ssb_share_body()
 			
 		else if($ssb_share_content_themes=='hover-left' || $ssb_share_content_themes=='hover-right')
 			{
-				
-				
+				if($ssb_share_total_count_display == 'yes')
+					{
+				$ssb_share_icons.= "<a title='Total Share' class='total-count' href='#' >".ssb_total_share_count_by_postid()."</a><br>";
+					}
 				
 				foreach($ssb_social_sites as $icon)
 					{

@@ -12,6 +12,7 @@
 			$ssb_share_content_display = get_option( 'ssb_share_content_display' );	
 			$ssb_share_content_themes = get_option( 'ssb_share_content_themes' );
 			$ssb_share_content_position = get_option( 'ssb_share_content_position' );
+			$ssb_share_total_count_display = get_option( 'ssb_share_total_count_display' );			
 			$ssb_share_content_icon_margin = get_option( 'ssb_share_content_icon_margin' );
 			$ssb_share_filter_posttype = get_option( 'ssb_share_filter_posttype' );			
 			$ssb_share_target_tab = get_option( 'ssb_share_target_tab' );
@@ -41,6 +42,9 @@
 			
 			$ssb_share_content_position = $_POST['ssb_share_content_position'];
 			update_option('ssb_share_content_position', $ssb_share_content_position);
+			
+			$ssb_share_total_count_display = $_POST['ssb_share_total_count_display'];
+			update_option('ssb_share_total_count_display', $ssb_share_total_count_display);			
 			
 			$ssb_share_content_icon_margin = $_POST['ssb_share_content_icon_margin'];
 			update_option('ssb_share_content_icon_margin', $ssb_share_content_icon_margin);
@@ -412,7 +416,19 @@ jQuery(document).ready(function(jQuery)
                         <option value="top" <?php  if($ssb_share_content_position=='top') echo "selected"; ?>>Top</option>
                         <option value="bottom" <?php  if($ssb_share_content_position=='bottom') echo "selected"; ?>>Bottom</option>
                     </select>
-                </div> 
+                </div>
+                
+				<div class="option-box">
+                    <p class="option-title">Total Share Count Display.</p>
+                    <p class="option-info">Display total share count.(for some theme)</p>
+                    <select name="ssb_share_total_count_display">
+                    	<option value="no" <?php  if($ssb_share_total_count_display=='no') echo "selected"; ?>>No</option>
+                        <option value="yes" <?php  if($ssb_share_total_count_display=='yes') echo "selected"; ?>>Yes</option>
+                        
+                    </select>
+                </div>                
+                
+                
                 
                 
                 

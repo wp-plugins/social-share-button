@@ -13,6 +13,8 @@
 	$ssb_social_sites_domain = get_option( 'ssb_social_sites_domain' );
 	$posts_per_page = get_option( 'posts_per_page' );
 	$ssb_share_filter_posttype = get_option( 'ssb_share_filter_posttype' );
+	
+	// get the selected post types as array
 	$i = 0;
 	foreach($ssb_share_filter_posttype as $key=>$value)
 		{
@@ -93,6 +95,7 @@
 					
 					$args = 	array (
 							'post_type' => $post_types,
+							'post_status' => 'publish',
 							'posts_per_page' => $posts_per_page,
 							'paged' => $paged,
 							

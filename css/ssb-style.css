@@ -13,6 +13,9 @@
   width: 100%;
 }
 
+
+
+
 .ssb-share a span.icon {
   display: inline-block;
   height: 30px;
@@ -162,6 +165,16 @@
   display: inline-block;
 }
 
+.ssb-share.flat .total-count {
+  background: none repeat scroll 0 0 rgb(255, 194, 46);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  float: left;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+  width: auto !important;
+}
 
 .ssb-share.flat a {
   display: inline-block;
@@ -223,7 +236,17 @@
   display: inline-block;
   margin-top: 30px;
 }
-
+.ssb-share.round .total-count {
+  background: none repeat scroll 0 0 rgb(255, 194, 46);
+  border-radius: 0;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  float: left;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+  width: auto !important;
+}
 .ssb-share.round a {
   display: inline-block;
   float: left;
@@ -298,13 +321,23 @@
 .ssb-share.wide {
   display: inline-block;
 }
-
+.ssb-share.wide .total-count {
+  background: none repeat scroll 0 0 rgb(255, 194, 46);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  float: left;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+  width: auto !important;
+}
 .ssb-share.wide a {
   background-color: rgb(221, 221, 221);
   background-repeat: no-repeat;
   display: inline-block;
   float: left;
   height: 30px;
+  margin: 5px 0;
   overflow: hidden;
   vertical-align: top;
   width: 80px;
@@ -355,6 +388,17 @@
 
 .ssb-share.bodyname {
   display: inline-block;
+}
+
+.ssb-share.bodyname .total-count {
+  background: none repeat scroll 0 0 rgb(255, 194, 46);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  float: left;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+  width: auto !important;
 }
 
 .ssb-share.bodyname a {
@@ -462,6 +506,17 @@
 
 .ssb-share.packslide {
   display: inline-block;
+}
+
+.ssb-share.packslide .total-count {
+  background: none repeat scroll 0 0 rgb(255, 194, 46);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  float: left;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+  width: auto !important;
 }
 
 .ssb-share.packslide a {
@@ -589,7 +644,16 @@
 .ssb-share.hexa {
   display: inline-block;
 }
-
+.ssb-share.hexa .total-count {
+  background: none repeat scroll 0 0 rgb(255, 194, 46);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  float: left;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+  width: auto !important;
+}
 
 .ssb-share.hexa a {
   display: inline-block;
@@ -704,6 +768,14 @@
   position: fixed;
   top: 30%;
 }
+.ssb-share.hover-left .total-count {
+  background: none repeat scroll 0 0 rgb(255, 194, 46);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+}
+
+
 
 .ssb-share.hover-left a {
   display: inline-block;
@@ -772,6 +844,12 @@
   right: 0;
   position: fixed;
   top: 30%;
+}
+.ssb-share.hover-right .total-count {
+  background: none repeat scroll 0 0 rgb(255, 194, 46);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
 }
 
 .ssb-share.hover-right a {

@@ -111,6 +111,41 @@ if($ssb_share_excerpt_display == 'yes')
 
 
 
+
+function ssb_total_share_count_by_postid()
+	{
+		$post_id = get_the_ID();
+		
+		$ssb_social_sites_domain = get_option( 'ssb_social_sites_domain' );
+		$ssb_post_sites = get_post_meta( $post_id, 'ssb_post_sites', true );
+		
+		
+		foreach($ssb_social_sites_domain as $domain)
+			{
+				if(!empty($ssb_post_sites[$domain]))
+					{
+						$ssb_post_sites[$domain] = (int)$ssb_post_sites[$domain];
+					}
+				else
+					{
+						$ssb_post_sites[$domain] = 0;
+					}
+				
+				
+			}
+			
+		$total_count = array_sum($ssb_post_sites);
+		
+		return $total_count;
+	}
+
+
+
+
+
+
+
+
 function ssb_share_icons()
 	{	
 		$ssb_share_content_themes = get_option( 'ssb_share_content_themes' );
